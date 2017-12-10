@@ -65,6 +65,7 @@ CREATE TABLE IF NOT EXISTS evidence(
 CREATE TABLE IF NOT EXISTS show_flags(
 	id int not null auto_increment,
 	show_owner boolean not null default 0,
+	show_possessor boolean not null default 0,
 	show_domain boolean not null default 0,
 	show_type boolean not null default 0,
 	show_material boolean not null default 0,
