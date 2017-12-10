@@ -32,6 +32,8 @@ CREATE TABLE IF NOT EXISTS evidence(
 	creation_date datetime null,
 	museum_id int not null,
 	`owner` TINYTEXT default null,
+	`owner_id` int not NULL,
+	`possessor` TINYTEXT default null,
 	`possessor_id` int not NULL,
 	`number` INT(10) UNSIGNED default NULL,
 	`domain` TEXT default NULL,
