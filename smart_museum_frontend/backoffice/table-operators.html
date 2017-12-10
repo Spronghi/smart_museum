@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>SB Admin - Start Bootstrap Template</title>
+  <title>Smartmuseum</title>
   <!-- Bootstrap core CSS-->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -16,13 +16,13 @@
   <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
-    <!-- Angular -->
+  <!-- Angular -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
 </head>
 
 <body ng-app="" class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav" ng-include="'navbar.html'"></nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav" ng-include="'navbar-admin.html'"></nav>
   <div class="content-wrapper">
     <div class="container-fluid">
       <!-- Breadcrumbs-->
@@ -35,48 +35,59 @@
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Data Table Example</div>
+          <i class="fa fa-table"></i>Operators</div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
+                  <th>Id</th>
                   <th>Name</th>
-                  <th>Position</th>
-                  <th>Office</th>
-                  <th>Age</th>
-                  <th>Start date</th>
-                  <th>Salary</th>
+                  <th>Surname</th>
+                  <th>Username</th>
+                  <th>Password</th>
+                  <th>Email</th>
+                  <th>Museum</th>
+                  <th>Is Admin</th>
                 </tr>
               </thead>
               <tfoot>
                 <tr>
+                  <th>Id</th>
                   <th>Name</th>
-                  <th>Position</th>
-                  <th>Office</th>
-                  <th>Age</th>
-                  <th>Start date</th>
-                  <th>Salary</th>
+                  <th>Surname</th>
+                  <th>Username</th>
+                  <th>Password</th>
+                  <th>Email</th>
+                  <th>Museum</th>
+                  <th>Is Admin</th>
                 </tr>
               </tfoot>
               <tbody>
-               <div ng-app="" ng-controller="addressController"> 
-    <ul> 
-    <li ng-repeat="x in addlist">
-       {{x.id + ',' + x.name + ',' + x.city }} <br><br>
-  </li>
-</ul>
-</div>
-<script>
-function addressController($scope,$http) {
-  $http.get("museums.json")
-  .success(function(response)
-    {
-	  $scope.addlist = response;
-	}
-  );
-}
-</script>
+                <tr>
+                  <td>Shad Decker</td>
+                  <td>Regional Director</td>
+                  <td>Edinburgh</td>
+                  <td>51</td>
+                  <td>2008/11/13</td>
+                  <td>$183,000</td>
+                </tr>
+                <tr>
+                  <td>Michael Bruce</td>
+                  <td>Javascript Developer</td>
+                  <td>Singapore</td>
+                  <td>29</td>
+                  <td>2011/06/27</td>
+                  <td>$183,000</td>
+                </tr>
+                <tr>
+                  <td>Donna Snider</td>
+                  <td>Customer Support</td>
+                  <td>New York</td>
+                  <td>27</td>
+                  <td>2011/01/25</td>
+                  <td>$112,000</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -89,7 +100,7 @@ function addressController($scope,$http) {
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
-          <small>Copyright © Your Website 2017</small>
+          <small>Copyright © smartmuseum 2017</small>
         </div>
       </div>
     </footer>
