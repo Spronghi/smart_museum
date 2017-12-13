@@ -1,0 +1,40 @@
+[
+ {
+    "id": "1",
+    "name": "Museo del Vaticano",
+    "surname": "Vaticano",
+    "username": "via Roma",
+    "password": "72100",
+    "email": "lol@gmail.com",
+     "museum": "dimmerda"
+  },
+  {
+    "id": "2",
+    "name": "Museo del Vaticano",
+    "surname": "Vaticano",
+    "username": "via Roma",
+    "password": "72100",
+    "email": "lol@gmail.com",
+     "museum": "dischifo"
+  },
+{
+    "id": "1",
+    "name": "Museo del Vaticano",
+    "surname": "Vaticano",
+    "username": "via Roma",
+    "password": "72100",
+    "email": "lol@gmail.com",
+     "museum": "dimmerda"
+  },
+  {
+    "id": "2",
+    "name": "Museo del Vaticano",
+    "surname": "Vaticano",
+    "username": "via Roma",
+    "password": "72100",
+    "email": "lol@gmail.com",
+     "museum": "dischifo"
+  }
+
+  
+]
