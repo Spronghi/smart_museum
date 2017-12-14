@@ -11,6 +11,17 @@ var evidences = 'evidences.json';
       });
     
 */
+museumApp.controller('TCtrl', function($scope, $http) {
+    $http({
+        method : "GET",
+        url : "/user/museums"
+    }).then(function mySuccess(response) {
+        $scope.museums = response.data;
+    }, function myError(response) {
+        $scope.museums = response.statusText;
+    });
+}); 
+
 museumApp.controller('TMuseumCtrl', function ($scope, $http) {
   $http.get(museums)
         .then(function (res) {
@@ -31,5 +42,4 @@ museumApp.controller('TEvidenceCtrl', function ($scope, $http) {
           $scope.evidences = res.data;                
         });
 });
-
 

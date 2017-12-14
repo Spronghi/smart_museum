@@ -4,11 +4,11 @@
 	
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.smart_museum</groupId>
-	<artifactId>smart_museum_server</artifactId>
+	<artifactId>smart_museum</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>smart_museum_server</name>
-	<description>Smart Museum Server</description>
+	<name>smart_museum</name>
+	<description>Smart Museum</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
