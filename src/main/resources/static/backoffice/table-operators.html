@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="museumApp" lang="en">
+<html ng-app="SmartmuseumApp" lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -18,10 +18,9 @@
   <link href="css/sb-admin.css" rel="stylesheet">
   <!-- Angular -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
-    <script src="mainCtrl.js"></script>
 </head>
 
-<body ng-controller="TOperatorCtrl" class="fixed-nav sticky-footer bg-dark" id="page-top">
+<body ng-controller="OperatorCtrl" class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav" ng-include="'navbar-admin.html'"></nav>
   <div class="content-wrapper">
@@ -72,7 +71,7 @@
                     <td>{{operator.username}}</td>
                     <td>{{operator.password}}</td>
                     <td>{{operator.email}}</td>
-                    <td>{{operator.museum}}</td>
+                    <td>{{operator.museum.name}}</td>
                     <td>{{operator.isAdmin}}</td>
                 </tr>
               </tbody>
@@ -125,7 +124,11 @@
     <script src="js/sb-admin.min.js"></script>
     <!-- Custom scripts for this page-->
     <script src="js/sb-admin-datatables.min.js"></script>
+      
+    <script src="scripts/app.js"></script>
+    <script src= "scripts/controllers/OperatorCtrl.js"></script>
   </div>
+ 
 </body>
 
 </html>
