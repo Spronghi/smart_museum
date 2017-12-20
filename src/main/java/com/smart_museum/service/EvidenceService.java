@@ -37,4 +37,8 @@ public class EvidenceService implements IEvidenceService {
 	public void deleteEvidence(int evidenceId) {
 		evidenceDAO.deleteEvidence(evidenceId);
 	}
+	@Override
+    public List<Evidence> getEvidencesByMuseumId(int museumId){
+		return evidenceDAO.getEvidencesByMuseumId(museumId);
+	}
 }

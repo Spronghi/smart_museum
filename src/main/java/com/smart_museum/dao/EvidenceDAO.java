@@ -69,4 +69,10 @@ public class EvidenceDAO implements IEvidenceDAO {
 		              .setParameter(2, author).getResultList().size();
 		return count > 0 ? true : false;
 	}
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Evidence> getEvidencesByMuseumId(int museumId) {
+		String hql = "FROM Evidence as evidence WHERE evidence.museum.id= ?";
+		return (List<Evidence>) entityManager.createQuery(hql).setParameter(1, museumId).getResultList();
+	}
 }

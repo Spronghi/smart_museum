@@ -6,6 +6,7 @@ import com.smart_museum.entity.Evidence;
 
 public interface IEvidenceService {
      List<Evidence> getAllEvidences();
+     List<Evidence> getEvidencesByMuseumId(int museumId);
      Evidence getEvidenceById(int evidenceId);
      boolean addEvidence(Evidence evidence);
      void updateEvidence(Evidence evidence);
