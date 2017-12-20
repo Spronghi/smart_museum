@@ -1,1 +1,1 @@
-angular.module('SmartmuseumApp', []);
+angular.module('BackofficeApp', []);
