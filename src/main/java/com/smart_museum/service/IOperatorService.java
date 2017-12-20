@@ -8,6 +8,7 @@ public interface IOperatorService {
      List<Operator> getAllOperators();
      Operator getOperatorById(int operatorId);
      List<Operator> getOperatorsByMuseum(int museumId);
+     Operator getOperatorByUsernameAndPassword(String username, String password);
      boolean addOperator(Operator operator);
      void updateOperator(Operator operator);
      void deleteOperator(int operatorId);

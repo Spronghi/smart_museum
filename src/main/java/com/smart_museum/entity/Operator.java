@@ -86,4 +86,10 @@ public class Operator implements Serializable {
 	public void setMuseum(Museum museum) {
 		this.museum = museum;
 	}
+	@Override
+	public String toString() {
+		return "Operator [id=" + id + ", name=" + name + ", surname=" + surname + ", isAdmin=" + isAdmin + ", username="
+				+ username + ", password=" + password + ", email=" + email + ", museum=" + museum + "]";
+	}
+	
 }

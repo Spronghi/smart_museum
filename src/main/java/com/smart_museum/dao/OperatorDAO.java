@@ -64,4 +64,15 @@ public class OperatorDAO implements IOperatorDAO {
 		String hql = "FROM Operator as operator WHERE operator.museum.id=? ORDER BY operator.id";
 		return (List<Operator>) entityManager.createQuery(hql).setParameter(1, museumId).getResultList();
 	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public Operator getOperatorByUsernameAndPassword(String username, String password) {
+		String hql = "FROM Operator as operator WHERE operator.username=? ORDER BY operator.id";
+		List<Operator> list = (List<Operator>) entityManager.createQuery(hql).setParameter(1, username).getResultList();
+		if(!list.isEmpty()) {
+			return list.get(0);
+		}
+		return null;
+	}
 }

@@ -41,4 +41,12 @@ public class OperatorService implements IOperatorService {
 	public List<Operator> getOperatorsByMuseum(int museumId) {
 		return operatorDAO.getOperatorsByMuseum(museumId);
 	}
+	@Override
+	public Operator getOperatorByUsernameAndPassword(String username, String password) {
+		if (operatorDAO.operatorExists(username)) {
+			return operatorDAO.getOperatorByUsernameAndPassword(username, password);
+		} else {
+			return null;   
+		}
+	}
 }
