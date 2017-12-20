@@ -57,4 +57,11 @@ public class OperatorDAO implements IOperatorDAO {
 		              .getResultList().size();
 		return count > 0 ? true : false;
 	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Operator> getOperatorsByMuseum(int museumId) {
+		String hql = "FROM Operator as operator WHERE operator.museum.id=? ORDER BY operator.id";
+		return (List<Operator>) entityManager.createQuery(hql).setParameter(1, museumId).getResultList();
+	}
 }

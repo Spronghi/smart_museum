@@ -7,6 +7,7 @@ import com.smart_museum.entity.Operator;
 public interface IOperatorService {
      List<Operator> getAllOperators();
      Operator getOperatorById(int operatorId);
+     List<Operator> getOperatorsByMuseum(int museumId);
      boolean addOperator(Operator operator);
      void updateOperator(Operator operator);
      void deleteOperator(int operatorId);

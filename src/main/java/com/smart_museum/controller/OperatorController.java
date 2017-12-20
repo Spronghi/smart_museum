@@ -28,6 +28,11 @@ public class OperatorController {
 		Operator operator = operatorService.getOperatorById(id);
 		return new ResponseEntity<Operator>(operator, HttpStatus.OK);
 	}
+	@GetMapping("operators_by_museum/{id}")
+	public ResponseEntity<List<Operator>> getOperatorByMuseumId(@PathVariable("id") Integer id) {
+		List<Operator> list = operatorService.getOperatorsByMuseum(id);
+		return new ResponseEntity<List<Operator>>(list, HttpStatus.OK);
+	}
 	@GetMapping("operators")
 	public ResponseEntity<List<Operator>> getAllOperators() {
 		List<Operator> list = operatorService.getAllOperators();

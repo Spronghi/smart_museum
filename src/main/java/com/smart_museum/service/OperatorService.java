@@ -37,4 +37,8 @@ public class OperatorService implements IOperatorService {
 	public void deleteOperator(int operatorId) {
 		operatorDAO.deleteOperator(operatorId);
 	}
+	@Override
+	public List<Operator> getOperatorsByMuseum(int museumId) {
+		return operatorDAO.getOperatorsByMuseum(museumId);
+	}
 }
