@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="HomeApp" lang="en">
 
   <head>
 
@@ -23,7 +23,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/creative.min.css" rel="stylesheet">
-<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
   </head>
 
   <body id="page-top">
@@ -39,16 +39,15 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                  <!-- Link or button for dropdown -->
-                 <a data-toggle="dropdown" href="#" class="nav-link js-scroll-trigger">Museums</a>
-                <div class="dropdown">
-                 <!-- Menu dropdown -->
-                 <ul class="dropdown-menu ml-auto">
-                   <li><a align="center" href="#">Museum 1</a></li>
-                   <li><a href="#">Museum 2</a></li>
-                   <li><a href="#">Museum 3</a></li>
-                   <li><a href="#">Museum 4</a></li>
+                 <a data-toggle="dropdown" href="#museumL" class="nav-link js-scroll-trigger">Museums</a>
+                <!-- div class="dropdown" ng-controller="MuseumListCtrl">
+                 <!-- Menu dropdown
+                 <ul class="dropdown-menu ml-auto" >
+                     <div ng-repeat="museum in museums">
+                        <li>{{museum.name}}</li>
+                     </div>
                  </ul>
-                </div>
+                </div-->
                 </li>
               <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">contact</a>
@@ -77,6 +76,28 @@
         </div>
       </div>
     </header>
+      
+    <section class="p-0" id="museumL">
+      <div class="container-fluid p-0" ng-controller="MuseumListCtrl">
+        <div class="row no-gutters popup-gallery" >
+          <div class="col-lg-4 col-sm-6" ng-repeat="museum in museums">
+            <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Museums
+                  </div>
+                  <div class="museum-name" >
+                    {{museum.name}}
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
     
     <section id="contact">
       <div class="container">
@@ -113,7 +134,7 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/creative.min.js"></script>
-<script>
+<!--script>
 function addressController($scope,$http) {
   $http.get("museums.json")
   .success(function(response)
@@ -122,7 +143,10 @@ function addressController($scope,$http) {
 	}
   );
 }
-</script>
+</script-->
+      <script src="scripts/app.js"></script>
+      <script src="scripts/controllers/MuseumListCtrl.js"></script>
+      
   </body>
 
 </html>

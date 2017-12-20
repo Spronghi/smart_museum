@@ -1,5 +1,5 @@
 angular
-    .module('SmartmuseumApp')
+    .module('BackofficeApp')
     .controller('EvidenceCtrl', function ($scope, $http) {
   $http.get("/user/evidences")
         .then(function (res) {
