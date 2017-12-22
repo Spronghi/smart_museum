@@ -1,1 +1,1 @@
-angular.module('BackofficeApp', []);
+angular.module('BackofficeApp', ['ngRoute']);
