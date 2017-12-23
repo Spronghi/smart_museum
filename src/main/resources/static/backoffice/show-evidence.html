@@ -14,10 +14,13 @@
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
+      <!-- Angular -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js"></script>
 </head>
 
-<body class="bodyBG">
-  <div class="container">
+<body class="bodyBG" ng-controller="EvidenceCtrl" >
+  <div class="container" ng-repeat="evidence in evidences">
     <div class="card card-register mx-auto mt-5">
       <div class="card-header">Register an Evidence</div>
       <div class="card-body">
@@ -27,11 +30,11 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="owner">Owner</label>
-                <input class="form-control" id="owner" ng-model="owner" type="text" aria-describedby="nameHelp" placeholder="Enter owner">
+                <input class="form-control" id="owner" ng-model="owner" type="text"  aria-describedby="nameHelp" placeholder="Enter owner">
               </div>
               <div class="col-md-6">
                 <label for="possessor_id">Owner id</label>
-                <input class="form-control" id="ownerId" ng-model="ownerId" type="text" aria-describedby="nameHelp" placeholder="Enter possessor">
+                <input class="form-control" id="ownerId" ng-model="ownerId" type="text" readonly="readonly" aria-describedby="nameHelp" placeholder="Enter possessor">
               </div>
             </div>
           </div>
@@ -39,11 +42,11 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="owner">Possessor</label>
-                <input class="form-control" id="possessor" ng-model="possessor" type="text" aria-describedby="nameHelp" placeholder="Enter owner">
+                <input class="form-control" id="possessor" ng-model="possessor" type="text" readonly="readonly" aria-describedby="nameHelp" placeholder="Enter owner">
               </div>
               <div class="col-md-6">
                 <label for="possessor_id">Possessor id</label>
-                <input class="form-control" id="possessor_id" ng-model="possessor_id" type="text" aria-describedby="nameHelp" placeholder="Enter possessor">
+                <input class="form-control" id="possessor_id" ng-model="possessor_id" type="text" readonly="readonly" aria-describedby="nameHelp" placeholder="Enter possessor">
               </div>
             </div>
           </div>
@@ -52,11 +55,11 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="number">Number</label>
-                <input class="form-control" id="number" ng-model="number" type="text" aria-describedby="nameHelp" placeholder="Enter number">
+                <input class="form-control" id="number" ng-model="number" type="text" readonly="readonly" aria-describedby="nameHelp" placeholder="Enter number">
               </div>
               <div class="col-md-6">
                 <label for="domain">Domain</label>
-                <input class="form-control" id="domain" ng-model="domain" type="text" aria-describedby="nameHelp" placeholder="Enter domain">
+                <input class="form-control" id="domain" ng-model="domain" type="text" readonly="readonly" aria-describedby="nameHelp" placeholder="Enter domain">
               </div>
             </div>
           </div>
@@ -65,11 +68,11 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="type">Type</label>
-                <input class="form-control" id="type" ng-model="type" type="text" aria-describedby="nameHelp" placeholder="Enter type">
+                <input class="form-control" id="type" ng-model="type" type="text" readonly="readonly" aria-describedby="nameHelp" placeholder="Enter type">
               </div>
               <div class="col-md-6">
                 <label for="title">Title</label>
-                <input class="form-control" id="title" ng-model="title" type="text" aria-describedby="nameHelp" placeholder="Enter title">
+                <input class="form-control" id="title" ng-model="title" type="text" readonly="readonly" aria-describedby="nameHelp" placeholder="Enter title">
               </div>
             </div>
           </div>
@@ -78,11 +81,11 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="material">Material</label>
-                <input class="form-control" id="material" ng-model="material" type="text" aria-describedby="nameHelp" placeholder="Enter material">
+                <input class="form-control" id="material" ng-model="material" type="text" readonly="readonly" aria-describedby="nameHelp" placeholder="Enter material">
               </div>
               <div class="col-md-6">
                 <label for="technique">Technique</label>
-                <input class="form-control" id="technique" ng-model="technique"type="text" aria-describedby="nameHelp" placeholder="Enter technique">
+                <input class="form-control" id="technique" ng-model="technique"type="text" readonly="readonly" aria-describedby="nameHelp" placeholder="Enter technique">
               </div>
             </div>
           </div>
@@ -91,11 +94,11 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="culture">Culture</label>
-                <input class="form-control" id="culture" ng-model="culture" type="text" aria-describedby="nameHelp" placeholder="Enter culture">
+                <input class="form-control" id="culture" ng-model="culture" type="text" readonly="readonly" aria-describedby="nameHelp" placeholder="Enter culture">
               </div>
               <div class="col-md-6">
                 <label for="period">Period</label>
-                <input class="form-control" id="period" ng-model="period" type="text" aria-describedby="nameHelp" placeholder="Enter period">
+                <input class="form-control" id="period" ng-model="period" type="text" readonly="readonly" aria-describedby="nameHelp" placeholder="Enter period">
               </div>
             </div>
           </div>
@@ -104,11 +107,11 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="author">Author</label>
-                <input class="form-control" id="author" ng-model="author" type="text" aria-describedby="nameHelp" placeholder="Enter author">
+                <input class="form-control" id="author" ng-model="author" type="text" readonly="readonly" aria-describedby="nameHelp" placeholder="Enter author">
               </div>
               <div class="col-md-6">
                 <label for="dimensions">Dimensions</label>
-                <input class="form-control" id="dimensions" ng-model="dimensions" type="text" aria-describedby="nameHelp" placeholder="Enter dimensions">
+                <input class="form-control" id="dimensions" ng-model="dimensions" type="text" readonly="readonly" aria-describedby="nameHelp" placeholder="Enter dimensions">
               </div>
             </div>
           </div>
@@ -117,11 +120,11 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="weight">Weight</label>
-                <input class="form-control" id="weight" ng-model="weight" type="text" aria-describedby="nameHelp" placeholder="Enter weight">
+                <input class="form-control" id="weight" ng-model="weight" type="text" readonly="readonly" aria-describedby="nameHelp" placeholder="Enter weight">
               </div>
               <div class="col-md-6">
                 <label for="value">Value</label>
-                <input class="form-control" id="value" ng-model="value" type="text" aria-describedby="nameHelp" placeholder="Enter value">
+                <input class="form-control" id="value" ng-model="value" type="text" readonly="readonly" aria-describedby="nameHelp" placeholder="Enter value">
               </div>
             </div>
           </div>
@@ -130,7 +133,7 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="otherData">Other_data</label>
-                <input class="form-control" id="otherData" ng-model="otherData" type="text" aria-describedby="nameHelp" placeholder="Enter other_data">
+                <input class="form-control" id="otherData" ng-model="otherData" type="text" readonly="readonly" aria-describedby="nameHelp" placeholder="Enter other_data">
               </div>
               <div class="col-md-6">
                   <label for="scaleOfDamage">Scale of damage</label></br>
@@ -158,7 +161,7 @@
               </div>
               <div class="col-md-6">
                 <label for="originPlace">origin place</label>
-                <input class="form-control" id="originPlace" ng-model="originPlace" type="text" aria-describedby="nameHelp" placeholder="Enter origin_place">
+                <input class="form-control" id="originPlace" ng-model="originPlace" type="text" readonly="readonly" aria-describedby="nameHelp" placeholder="Enter origin_place">
               </div>
             </div>
           </div>
@@ -167,11 +170,11 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="storageLocation">Storage Location</label>
-                <input class="form-control" id="storageLocation" ng-model="storageLocation" type="text" aria-describedby="nameHelp" placeholder="Enter storage_location">
+                <input class="form-control" id="storageLocation" ng-model="storageLocation" type="text" readonly="readonly" aria-describedby="nameHelp" placeholder="Enter storage_location">
               </div>
               <div class="col-md-6">
                 <label for="historicInformation">Historic Information</label>
-                <input class="form-control" id="historicInformation" ng-model="historicInformation" type="text" aria-describedby="nameHelp" placeholder="Enter historic information">
+                <input class="form-control" id="historicInformation" ng-model="historicInformation" type="text" readonly="readonly" aria-describedby="nameHelp" placeholder="Enter historic information">
               </div>
             </div>
           </div>
@@ -180,11 +183,11 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="description">Description</label>
-                <input class="form-control" id="description" ng-model="description" type="text" aria-describedby="nameHelp" placeholder="Enter description">
+                <input class="form-control" id="description" ng-model="description" type="text" readonly="readonly" aria-describedby="nameHelp" placeholder="Enter description">
               </div>
               <div class="col-md-6">
                 <label for="restauration">Restauration</label>
-                <input class="form-control" id="restauration" ng-model="restauration" type="text" aria-describedby="nameHelp" placeholder="Enter restauration">
+                <input class="form-control" id="restauration" ng-model="restauration" type="text" readonly="readonly" aria-describedby="nameHelp" placeholder="Enter restauration">
               </div>
             </div>
           </div>
@@ -193,11 +196,12 @@
               <div class="form-row">
               <div class="col-md-6">  
             <label for="operator_id">operator id</label>
-            <input class="form-control" id="operatorId" ng-model="OperatorId" type="text" aria-describedby="nameHelp" placeholder="Enter operator id">
+            <input class="form-control" id="operatorId" ng-model="OperatorId" type="text" readonly="readonly" aria-describedby="nameHelp" placeholder="Enter operator id">
           </div>
         </div>
             </div>
-          <a class="btn btn-primary btn-block" href="login.html">Register</a>
+          <a class="btn btn-primary btn-block" href="login.html">Modify</a>
+          <a class="btn btn-danger btn-block" href="login.html">Delete</a>
         </form>
         
       </div>
@@ -208,6 +212,8 @@
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- Core plugin JavaScript-->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/EvidenceCtrl.js"></script>
 </body>
 
 </html>
