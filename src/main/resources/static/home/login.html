@@ -26,7 +26,7 @@
 
   </head>
 
-  <body id="page-top">
+  <body ng-app="HomeApp" id="page-top">
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -53,7 +53,7 @@
             <hr>
           </div>
             <div>
-            <form name="form" ng-submit="vm.login()" role="form">
+            <form name="form" role="form">
                 <div  ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
                     <label for="username">Username</label>
                     <div>
@@ -72,7 +72,7 @@
                 </br>
               </br>
                 <div >
-                    <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary btn-xl js-scroll-trigger" href="/backoffice/index.html">Login</button>
+                    <button ng-controller="LoginCtrl" ng-disabled="form.$invalid || vm.dataLoading" ng-click="login()" class="btn btn-primary btn-xl js-scroll-trigger" href="backoffice/index.html">Login</button>
                 </div>
             </form>
             </div>
@@ -105,9 +105,12 @@
     <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
     <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+
     <!-- Custom scripts for this template -->
     <script src="js/creative.min.js"></script>
-
+    <script src= "scripts/app.js"></script>
+    <script src= "scripts/controllers/LoginCtrl.js"></script>
   </body>
 
 </html>
