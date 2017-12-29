@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="BackofficeApp" lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -26,12 +26,12 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="name">Name</label>
-                <input class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" placeholder="Enter name">
+                <input class="form-control" id="exampleInputName" ng-model="name" type="text" aria-describedby="nameHelp" placeholder="Enter name">
               </div>
                 
               <div class="col-md-6">
                 <label for="location">Location</label>
-                <input class="form-control" id="location" type="text" aria-describedby="nameHelp" placeholder="Enter location">
+                <input class="form-control" id="location" ng-model="location" type="text" aria-describedby="nameHelp" placeholder="Enter location">
               </div>
             </div>
           </div>
@@ -39,32 +39,29 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="address">Address</label>
-                <input class="form-control" id="address" type="text" aria-describedby="nameHelp" placeholder="Enter address">
+                <input class="form-control" id="address" ng-model="address" type="text" aria-describedby="nameHelp" placeholder="Enter address">
               </div>
                 
               <div class="col-md-6">
-                <label for="postalNum">postal Num</label>
-                <input class="form-control" id="exampleInputLastName" type="text" aria-describedby="nameHelp" placeholder="Enter last name">
+                <label for="postalNo">Postal Num</label>
+                <input class="form-control" id="postalNo" ng-model="postalNo" type="text" aria-describedby="nameHelp" placeholder="Enter last name">
               </div>
             </div>
           </div>
           <div class="form-group">
             <label for="description">Description</label>
-            <input class="form-control" id="description" type="text" aria-describedby="emailHelp" placeholder="Enter description">
+            <input class="form-control" id="description" ng-model="description" type="text" aria-describedby="emailHelp" placeholder="Enter description">
           </div>
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
                 <label for="email">Email address</label>
-                <input class="form-control" id="email" type="email" placeholder="Enter email">
+                <input class="form-control" id="email" ng-model="email" type="email" placeholder="Enter email">
               </div>
             </div>
           </div>
           <a class="btn btn-primary btn-block" href="login.html">Register</a>
         </form>
-        <div class="text-center">
-          <a class="d-block small mt-3" href="login.html">Login Page</a>
-        </div>
       </div>
     </div>
   </div>

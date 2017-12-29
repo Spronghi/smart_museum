@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="BAckofficeApp" lang="en">
+<html ng-app="BackofficeApp" lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Smartmuseum</title>
-  <!-- Bootstrap core CSS-->
+   <!-- Bootstrap core CSS-->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -17,10 +17,12 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
   <!-- Angular -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+     
 </head>
 
-<body ng-controller="OperatorCtrl" class="fixed-nav sticky-footer bg-dark" id="page-top">
+<body ng-controller="operatorCtrl" class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav" ng-include="'navbar-admin.html'"></nav>
   <div class="content-wrapper">
@@ -36,7 +38,7 @@
       <div class="card mb-3">
         <div class="card-header">
           <i class="fa fa-table"></i>Operators</div>
-        <div class="card-body">
+        <div  class="card-body">
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
@@ -72,7 +74,7 @@
                     <td>{{operator.password}}</td>
                     <td>{{operator.email}}</td>
                     <td>{{operator.museum.name}}</td>
-                    <td>{{operator.isAdmin}}</td>
+                    <td>{{operator.admin}}</td>
                 </tr>
               </tbody>
             </table>
@@ -126,9 +128,8 @@
     <script src="js/sb-admin-datatables.min.js"></script>
       
     <script src="scripts/app.js"></script>
-    <script src= "scripts/controllers/OperatorCtrl.js"></script>
-  </div>
- 
+    <script src="scripts/controllers/OperatorCtrl.js"></script>
+    </div>
 </body>
 
 </html>
