@@ -11,6 +11,8 @@ import com.smart_museum.entity.Evidence;
 public class EvidenceService implements IEvidenceService {
 	@Autowired
 	private IEvidenceDAO evidenceDAO;
+	@Autowired
+	private IOperatorService operatorService;
 	@Override
 	public Evidence getEvidenceById(int evidenceId) {
 		Evidence obj = evidenceDAO.getEvidenceById(evidenceId);
@@ -40,5 +42,9 @@ public class EvidenceService implements IEvidenceService {
 	@Override
     public List<Evidence> getEvidencesByMuseumId(int museumId){
 		return evidenceDAO.getEvidencesByMuseumId(museumId);
+	}
+	@Override
+    public List<Evidence> getEvidencesByOperatorId(int operatorId){
+		return evidenceDAO.getEvidencesByMuseumId(operatorService.getOperatorById(operatorId).getMuseum().getId());
 	}
 }

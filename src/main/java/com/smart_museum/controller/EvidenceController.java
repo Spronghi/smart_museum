@@ -33,6 +33,11 @@ public class EvidenceController {
 		List<Evidence> list = evidenceService.getEvidencesByMuseumId(id);
 		return new ResponseEntity<List<Evidence>>(list, HttpStatus.OK);
 	}
+	@GetMapping("evidences_by_operator/{id}")
+	public ResponseEntity<List<Evidence>> getEvidencesByOperatorId(@PathVariable("id") Integer id) {
+		List<Evidence> list = evidenceService.getEvidencesByOperatorId(id);
+		return new ResponseEntity<List<Evidence>>(list, HttpStatus.OK);
+	}
 	@GetMapping("evidences")
 	public ResponseEntity<List<Evidence>> getAllEvidences() {
 		List<Evidence> list = evidenceService.getAllEvidences();
