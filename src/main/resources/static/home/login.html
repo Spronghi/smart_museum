@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SmartMuseum</title>
+    <title>SmartMuseum Login</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -67,6 +67,9 @@
                     <div>
                     <input type="password" name="password" id="password"  ng-model="vm.password" size="20" required />
                     </div>
+                    <div>
+                    <p class="userLabel" ng-controller="LoginCtrl" ng-model="userLabel">{{userLabel}}</p>
+                    </div>
                     <!--span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span-->
                 </div>
                 </br>
@@ -109,6 +112,7 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/creative.min.js"></script>
+        
     <script src= "scripts/app.js"></script>
     <script src= "scripts/controllers/LoginCtrl.js"></script>
   </body>

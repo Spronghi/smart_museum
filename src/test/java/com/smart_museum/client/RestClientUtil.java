@@ -72,12 +72,12 @@ public class RestClientUtil {
         RestTemplate restTemplate = new RestTemplate();
 	    String url = "http://localhost:8080/user/museum";
 	    Museum objMuseum = new Museum();
-	    objMuseum.setName("Museo contemporaneo di sta minchia");
-	    objMuseum.setAddress("Via Giuditta");
-	    objMuseum.setEmail("poroporo@gmail.com");
+	    objMuseum.setName("Super Museo");
+	    objMuseum.setAddress("Via Poro poro");
+	    objMuseum.setEmail("supermuseo@gmail.com");
 	    objMuseum.setLocation("Lecce");
 	    objMuseum.setPostalNo(73100);
-	    objMuseum.setDescription("Un museo davvero figo");
+	    objMuseum.setDescription("Il museo di superman");
         HttpEntity<Museum> requestEntity = new HttpEntity<Museum>(objMuseum, headers);
         URI uri = restTemplate.postForLocation(url, requestEntity);
         System.out.println(uri.getPath());    	
@@ -134,8 +134,8 @@ public class RestClientUtil {
     public static void main(String args[]) {
     	RestClientUtil util = new RestClientUtil();
     	util.addMuseumDemo();
-    	util.addOperatorDemo();
-    	util.addEvidenceDemo();
+    	//util.addOperatorDemo();
+    	//util.addEvidenceDemo();
     	//util.getArticleByIdDemo();
     	//util.getAllArticlesDemo();
     	//util.addArticleDemo();
