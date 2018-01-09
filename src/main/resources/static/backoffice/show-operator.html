@@ -14,12 +14,13 @@
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
-      <!-- Angular -->
+  <!-- Angular -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-cookies.min.js"></script>
 </head>
 
-<body class="bodyBG" ng-controller="OperatorCtrl" >
+<body class="bodyBG" ng-controller="ShowOperatorCtrl" >
   <!--div class="container" ng-repeat=""-->
     <div class="card card-register mx-auto mt-5">
       <div class="card-header">Operator</div>
@@ -29,11 +30,11 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="name">Name</label>
-                <input class="form-control" id="name" ng-model="name" type="text" readonly aria-describedby="nameHelp" placeholder="Enter name">
+                <input class="form-control" id="name" ng-model="operator.name" type="text" readonly aria-describedby="nameHelp" placeholder="Enter name">
               </div> 
               <div class="col-md-6">
                 <label for="surname">Surname</label>
-                <input class="form-control" id="surname" ng-model="surname" type="text" readonly aria-describedby="nameHelp" placeholder="Enter surname">
+                <input class="form-control" id="surname" ng-model="operator.surname" type="text" readonly aria-describedby="nameHelp" placeholder="Enter surname">
               </div>
             </div>
           </div>
@@ -42,20 +43,20 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="username">Username</label>
-                <input class="form-control" id="username" ng-model="username" type="text" readonly aria-describedby="nameHelp" placeholder="Enter username">
+                <input class="form-control" id="username" ng-model="operator.username" type="text" readonly aria-describedby="nameHelp" placeholder="Enter username">
               </div> 
               <div class="col-md-6">
                 <label for="password">Password</label>
-                <input class="form-control" id="password" ng-model="password" type="text" readonly  aria-describedby="nameHelp" placeholder="Enter password">
+                <input class="form-control" id="password" ng-model="operator.password" type="text" readonly  aria-describedby="nameHelp" placeholder="Enter password">
               </div>
             </div>
           </div>
             
-          <div class="form-group" ng-controller="museumCtrl">
+          <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
                 <label for="email">Email</label>
-                <input class="form-control" id="email" ng-model="email" type="text" readonly aria-describedby="nameHelp" placeholder="Enter email">
+                <input class="form-control" id="email" ng-model="operator.email" type="text" readonly aria-describedby="nameHelp" placeholder="Enter email">
               </div> 
               <div class="col-md-6" >
                   <label for="museum">Museum</label></br>
@@ -84,8 +85,8 @@
   <!-- Core plugin JavaScript-->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/OperatorCtrl.js"></script>
-    <script src= "scripts/controllers/MuseumCtrl.js"></script>
+  <script src="scripts/app.services.js"></script>
+  <script src="scripts/controllers/show/ShowOperatorCtrl.js"></script>
 </body>
 
 </html>
