@@ -6,8 +6,8 @@ app.controller('RegisterOperatorCtrl', function (dataService, $location, $scope,
             });
         $scope.vm = [];
         $scope.vm.admin=false;
-        $scope.getMuseum = function(id){
-            $http.get("/user/museum/"+id)
+        $scope.getMuseum = function(){
+            $http.get("/user/museum/"+$scope.selectedMuseum.id)
                 .then(function (res) {
                     $scope.vm.museum = res.data;
                 });
@@ -25,7 +25,7 @@ app.controller('RegisterOperatorCtrl', function (dataService, $location, $scope,
                 surname: $scope.vm.surname,
                 email: $scope.vm.email,
                 admin: $scope.vm.admin,
-                museum: 1
+                museum: $scope.vm.museum
             };
 
             $http.post('/user/operator', data, config).then(function (response) {

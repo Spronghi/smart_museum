@@ -68,11 +68,11 @@
                 <input id="Admin" ng-model="vm.admin" type="checkbox">
               </div>
               <div class="col-md-6" >
-                  <label for="museum">Museum</label>
+                  <label>Museum</label>
                   <div class="btn-group">
-                  <select ng-options="museum.id for museum in museums" 
-                          ng-model="museum" 
-                          ng-change="getMuseum(museum)">
+                  <select ng-options="museumFoo.id for museumFoo in museums" 
+                          ng-model="selectedMuseum" 
+                          ng-change="getMuseum()">
                   </select>
                 </div>
               </div>
