@@ -16,7 +16,6 @@
     <link href="css/sb-admin.css" rel="stylesheet">
 </head>
 
-<<<<<<< HEAD
 <body ng-app="BackofficeApp" background="../home/img/header.jpg">
     <div class="container">
         <div class="card card-login mx-auto mt-5">
@@ -29,18 +28,6 @@
                             <input type="text" name="username" id="username" class="form-control" ng-model="vm.username" size="20" required />
                         </div>
                         <!--span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span-->
-=======
-<body class="bodyBG" ng-app="BackofficeApp">
-  <div class="container">
-    <div class="card card-login mx-auto mt-5">
-      <div class="card-header">Login</div>
-      <div class="card-body">
-        <form name="form" ng-submit="vm.login()" role="form">
-                <div  ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
-                    <label for="username">Username</label>
-                    <div>
-                    <input type="text" name="username" id="username" class="form-control" ng-model="vm.username" size="20" required />
->>>>>>> 04fa35812158e24c882fbf515fe83690e7a86c0f
                     </div>
                     </br>
                     <div  ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
