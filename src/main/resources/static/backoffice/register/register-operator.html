@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html ng-app="BackofficeApp" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Smartmuseum Museum</title>
+  <!-- Bootstrap core CSS-->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin.css" rel="stylesheet">
+
+</head>
+
+<body ng-controller="RegisterOperatorCtrl" class="bodyBG" >
+  <div class="container">
+    <div class="card card-register mx-auto mt-5">
+      <div class="card-header">Register a Operator</div>
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6">
+                <label for="name">Name</label>
+                <input class="form-control" id="name" ng-model="vm.name" type="text" aria-describedby="nameHelp" placeholder="Enter name">
+              </div> 
+              <div class="col-md-6">
+                <label for="surname">Surname</label>
+                <input class="form-control" id="surname" ng-model="vm.surname" type="text" aria-describedby="nameHelp" placeholder="Enter surname">
+              </div>
+            </div>
+          </div>
+            
+         <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6">
+                <label for="username">Username</label>
+                <input class="form-control" id="username" ng-model="vm.username" type="text" aria-describedby="nameHelp" placeholder="Enter username">
+              </div> 
+              <div class="col-md-6">
+                <label for="email">Email</label>
+                <input class="form-control" id="email" ng-model="vm.email" type="text" aria-describedby="nameHelp" placeholder="Enter email">
+              </div> 
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6">
+                <label for="password">Password</label>
+                <input class="form-control" id="password" ng-model="vm.password" type="text" aria-describedby="nameHelp" placeholder="Enter password">
+              </div>
+              <div class="col-md-6">
+                <label for="repeat-password">Repeat Password</label>
+                <input class="form-control" id="email" ng-model="vm.repeatPassword" type="text" aria-describedby="nameHelp" placeholder="Repeat password">
+              </div>
+            </div>
+          </div>
+               
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6">
+                <label for="admin">Is Admin</label>
+                <input id="Admin" ng-model="vm.admin" type="checkbox">
+              </div>
+              <div class="col-md-6" >
+                  <label for="museum">Museum</label>
+                  <div class="btn-group">
+                  <select ng-options="museum.id for museum in museums" 
+                          ng-model="museum" 
+                          ng-change="getMuseum(museum)">
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="btn btn-primary btn-block" ng-click="register()">Register</a>
+        </form>
+          
+        
+      </div>
+    </div>
+  </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Modules-->
+    <script src= "scripts/app.js"></script>
+    <script src= "scripts/app.services.js"></script>
+    <!-- Controllers-->
+    <script src= "scripts/controllers/LoginCtrl.js"></script>
+    <script src= "scripts/controllers/register/RegisterOperatorCtrl.js"></script>
+    <!-- Services-->
+    <script src= "scripts/services/DataService.js"></script>
+</body>
+
+</html>

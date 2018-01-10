@@ -1,5 +1,5 @@
-app.controller('ShowOperatorCtrl', function (loginService, $location, $scope, $http, $window) {
-    if(loginService.getCurrentId()!=0){
+app.controller('ShowOperatorCtrl', function (dataService, $location, $scope, $http, $window) {
+    if(dataService.getCurrentId()!=0){
        $http.get("/user/operator/"+$location.search().id)
         .then(function (res) {
             $scope.operator = res.data;

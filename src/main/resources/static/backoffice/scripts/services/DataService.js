@@ -1,21 +1,26 @@
 angular
     .module('app.services')
-    .factory('loginService', ['$http', '$cookies', '$cookieStore', loginService]);
+    .factory('dataService', ['$http', '$cookies', '$cookieStore', dataService]);
              
-function loginService($http, $cookies, $cookieStore) {
+function dataService($http, $cookies, $cookieStore) {
     function set(data) {
-      $cookies.operatorId = data.id;
+      $cookieStore.put('operator', data);
       $cookieStore.put('operatorId', data.id);
     }
     function getCurrentId() {
       return $cookieStore.get('operatorId');
     }
+    function getCurrentOperator() {
+      return $cookieStore.get('operator');
+    }
     function unset(){
         $cookieStore.put('operatorId', 0);
+        $cookieStore.put('operator', 0);
     }
     return {
       set: set,
       unset: unset,
+      getCurrentOperator: getCurrentOperator,
       getCurrentId: getCurrentId
     }
 }

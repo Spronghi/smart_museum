@@ -8,22 +8,17 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Smartmuseum</title>
-   <!-- Bootstrap core CSS-->
+  <!-- Bootstrap core CSS-->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Page level plugin CSS-->
   <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
-  <!-- Angular -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-cookies.min.js"></script>
+  <link href="css/sb-admin.css" rel="stylesheet">   
 </head>
 
-<body ng-controller="EvidenceTableCtrl" class="fixed-nav sticky-footer bg-dark" id="page-top">
-
+<body ng-controller="MuseumTableCtrl" class="fixed-nav sticky-footer bg-dark" id="page-top">
     <div class="container-fluid">
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
@@ -35,44 +30,41 @@
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i>Evidences</div>
+          <i class="fa fa-table"></i>Museums</div>
         <div  class="card-body">
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
                   <th>Id</th>
-                  <th>Possessor</th>
-                  <th>Title</th>
-                  <th>Material</th>
-                  <th>Author</th>
+                  <th>Name</th>
+                  <th>Location</th>
+                  <th>Address</th>
+                  <th>Postal Num</th>
                   <th>Description</th>
-                  <th>Restauration</th>
-                  <th>Operator Id</th>
+                  <th>Email</th>
                 </tr>
               </thead>
               <tfoot>
                 <tr>
                   <th>Id</th>
-                  <th>Possessor</th>
-                  <th>Title</th>
-                  <th>Material</th>
-                  <th>Author</th>
+                  <th>Name</th>
+                  <th>Location</th>
+                  <th>Address</th>
+                  <th>Postal Num</th>
                   <th>Description</th>
-                  <th>Restauration</th>
-                  <th>Operator Id</th>
+                  <th>Email</th>
                 </tr>
               </tfoot>
               <tbody>
-               <tr ng-repeat="evidence in evidences">
-                  <td>{{evidence.id}}</td>
-                  <td>{{evidence.possessor.name}}</td>
-                  <td>{{evidence.title}}<td>
-                  <td>{{evidence.material}}</td>
-                  <td>{{evidence.author}}</td>
-                  <td>{{evidence.description}}</td>
-                  <td>{{evidence.restauration}}</td>
-                  <td>{{evidence.operator.id}}</td>
+                <tr ng-repeat="museum in museums">
+                    <td>{{museum.id}}</td>
+                    <td>{{museum.name}}</td>
+                    <td>{{museum.location}}</td>
+                    <td>{{museum.address}}</td>
+                    <td>{{museum.email}}</td>
+                    <td>{{museum.description}}</td>
+                    <td>{{museum.email}}</td>
                 </tr>
               </tbody>
             </table>
@@ -111,7 +103,6 @@
           </div>
         </div>
       </div>
-
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -124,15 +115,10 @@
     <script src="js/sb-admin.min.js"></script>
     <!-- Custom scripts for this page-->
     <script src="js/sb-admin-datatables.min.js"></script>
-    
-    <!-- Modules-->
-    <script src= "scripts/app.js"></script>
+      
+    <script src="scripts/app.js"></script>
     <script src= "scripts/app.services.js"></script>
-    <!-- Services-->
-    <script src= "scripts/services/LoginService.js"></script>
-    <!-- Controllers-->
-    <script src= "scripts/controllers/tables/EvidenceTableCtrl.js"></script>
-    <script src= "scripts/controllers/LoginCtrl.js"></script>
+    <script src= "scripts/controllers/tables/MuseumTableCtrl.js"></script>
     </div>
 </body>
 
