@@ -30,9 +30,9 @@ app.controller('RegisterOperatorCtrl', function (dataService, $location, $scope,
 
             $http.post('/user/operator', data, config).then(function (response) {
                 $scope.postResultMessage = response.data;
-                $window.location.href = "/backoffice/login.html";
+                $window.location.href = "/backoffice/admin.html";
             }, function error(response) {
-                $scope.postResultMessage = "Error with status: " +  response.statusText;
+                $window.location.href = "/backoffice/error.html?error=Error with status:"+response.statusText;
             });
         }
     } else {

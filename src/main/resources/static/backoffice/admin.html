@@ -23,8 +23,8 @@
 <body ng-app="BackofficeApp" class="fixed-nav sticky-footer bg-dark" id="page-top">
     <!-- Navigation-->
     <nav  class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav" ng-include="'navbar/navbar-admin.html'"></nav>
-    <div ng-view="table-evidences" class="content-wrapper">
-        <div class="container-fluid">
+    <div ng-view class="content-wrapper">
+        <div class="container-fluid" ng-include="table-evidences">
             <!-- put something there -->
         </div>
     </div>
@@ -51,10 +51,13 @@
     <script src= "scripts/app.services.js"></script>
     <!-- Controllers-->
     <script src= "scripts/controllers/LoginCtrl.js"></script>
-    <script src= "scripts/controllers/register/RegisterOperatorCtrl.js"></script>
     <script src= "scripts/controllers/tables/EvidenceTableCtrl.js"></script>
     <script src= "scripts/controllers/tables/MuseumTableCtrl.js"></script>
     <script src= "scripts/controllers/tables/OperatorTableCtrl.js"></script>
+    <script src= "scripts/controllers/register/RegisterEvidenceCtrl.js"></script>
+    <script src= "scripts/controllers/register/RegisterMuseumCtrl.js"></script>
+    <script src= "scripts/controllers/register/RegisterOperatorCtrl.js"></script>
+
     <!-- Services-->
     <script src= "scripts/services/DataService.js"></script>
   </div>

@@ -23,40 +23,16 @@
       <div class="card-body">
         <form>
             <!-- coppia -->
-          <div class="form-group">
-            <div class="form-row">
-              <div class="col-md-6">
-                <label for="owner">Owner</label>
-                <input class="form-control" id="owner" ng-model="owner" type="text" aria-describedby="nameHelp" placeholder="Enter owner">
-              </div>
-              <div class="col-md-6">
-                <label for="possessor_id">Owner id</label>
-                <input class="form-control" id="ownerId" ng-model="ownerId" type="text" aria-describedby="nameHelp" placeholder="Enter possessor">
-              </div>
-            </div>
-          </div>
-             <div class="form-group">
-            <div class="form-row">
-              <div class="col-md-6">
-                <label for="owner">Possessor</label>
-                <input class="form-control" id="possessor" ng-model="possessor" type="text" aria-describedby="nameHelp" placeholder="Enter owner">
-              </div>
-              <div class="col-md-6">
-                <label for="possessor_id">Possessor id</label>
-                <input class="form-control" id="possessor_id" ng-model="possessor_id" type="text" aria-describedby="nameHelp" placeholder="Enter possessor">
-              </div>
-            </div>
-          </div>
-            <!-- coppia -->
+          
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
                 <label for="number">Number</label>
-                <input class="form-control" id="number" ng-model="number" type="text" aria-describedby="nameHelp" placeholder="Enter number">
+                <input class="form-control" type="text" numbersOnly ng-model="vm.number" aria-describedby="nameHelp" placeholder="Enter number">
               </div>
               <div class="col-md-6">
                 <label for="domain">Domain</label>
-                <input class="form-control" id="domain" ng-model="domain" type="text" aria-describedby="nameHelp" placeholder="Enter domain">
+                <input class="form-control" id="domain" ng-model="vm.domain" type="text" aria-describedby="nameHelp" placeholder="Enter domain">
               </div>
             </div>
           </div>
@@ -65,11 +41,11 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="type">Type</label>
-                <input class="form-control" id="type" ng-model="type" type="text" aria-describedby="nameHelp" placeholder="Enter type">
+                <input class="form-control" id="type" ng-model="vm.type" type="text" aria-describedby="nameHelp" placeholder="Enter type">
               </div>
               <div class="col-md-6">
                 <label for="title">Title</label>
-                <input class="form-control" id="title" ng-model="title" type="text" aria-describedby="nameHelp" placeholder="Enter title">
+                <input class="form-control" id="title" ng-model="vm.title" type="text" aria-describedby="nameHelp" placeholder="Enter title">
               </div>
             </div>
           </div>
@@ -78,11 +54,11 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="material">Material</label>
-                <input class="form-control" id="material" ng-model="material" type="text" aria-describedby="nameHelp" placeholder="Enter material">
+                <input class="form-control" id="material" ng-model="vm.material" type="text" aria-describedby="nameHelp" placeholder="Enter material">
               </div>
               <div class="col-md-6">
                 <label for="technique">Technique</label>
-                <input class="form-control" id="technique" ng-model="technique"type="text" aria-describedby="nameHelp" placeholder="Enter technique">
+                <input class="form-control" id="technique" ng-model="vm.technique"type="text" aria-describedby="nameHelp" placeholder="Enter technique">
               </div>
             </div>
           </div>
@@ -91,11 +67,11 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="culture">Culture</label>
-                <input class="form-control" id="culture" ng-model="culture" type="text" aria-describedby="nameHelp" placeholder="Enter culture">
+                <input class="form-control" id="culture" ng-model="vm.culture" type="text" aria-describedby="nameHelp" placeholder="Enter culture">
               </div>
               <div class="col-md-6">
                 <label for="period">Period</label>
-                <input class="form-control" id="period" ng-model="period" type="text" aria-describedby="nameHelp" placeholder="Enter period">
+                <input class="form-control" id="period" ng-model="vm.period" type="text" aria-describedby="nameHelp" placeholder="Enter period">
               </div>
             </div>
           </div>
@@ -104,11 +80,11 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="author">Author</label>
-                <input class="form-control" id="author" ng-model="author" type="text" aria-describedby="nameHelp" placeholder="Enter author">
+                <input class="form-control" id="author" ng-model="vm.author" type="text" aria-describedby="nameHelp" placeholder="Enter author">
               </div>
               <div class="col-md-6">
                 <label for="dimensions">Dimensions</label>
-                <input class="form-control" id="dimensions" ng-model="dimensions" type="text" aria-describedby="nameHelp" placeholder="Enter dimensions">
+                <input class="form-control" id="dimensions" ng-model="vm.dimensions" type="text" aria-describedby="nameHelp" placeholder="Enter dimensions">
               </div>
             </div>
           </div>
@@ -117,11 +93,11 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="weight">Weight</label>
-                <input class="form-control" id="weight" ng-model="weight" type="text" aria-describedby="nameHelp" placeholder="Enter weight">
+                <input class="form-control" type="text" numbersOnly id="weight" ng-model="vm.weight" aria-describedby="nameHelp" placeholder="Enter weight">
               </div>
               <div class="col-md-6">
                 <label for="value">Value</label>
-                <input class="form-control" id="value" ng-model="value" type="text" aria-describedby="nameHelp" placeholder="Enter value">
+                <input class="form-control" id="value" ng-model="vm.value" type="text" aria-describedby="nameHelp" placeholder="Enter value">
               </div>
             </div>
           </div>
@@ -129,21 +105,12 @@
          <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
-                <label for="otherData">Other_data</label>
-                <input class="form-control" id="otherData" ng-model="otherData" type="text" aria-describedby="nameHelp" placeholder="Enter other_data">
+                <label for="otherData">Other Data</label>
+                <input class="form-control" id="otherData" ng-model="vm.otherData" type="text" aria-describedby="nameHelp" placeholder="Enter other data">
               </div>
               <div class="col-md-6">
-                  <label for="scaleOfDamage">Scale of damage</label></br>
-                <input  id="scaleOfDamage" ng-model="scaleOfDamage" type="radio" value="1" checked>1</input>
-                <input  id="scaleOfDamage" ng-model="scaleOfDamage" type="radio" value="2">2</input>
-                <input  id="scaleOfDamage" ng-model="scaleOfDamage" type="radio" value="3">3</input>
-                <input  id="scaleOfDamage" ng-model="scaleOfDamage" type="radio" value="4">4</input>
-                <input  id="scaleOfDamage" ng-model="scaleOfDamage"  type="radio" value="5">5</input>
-                <input  id="scaleOfDamage" ng-model="scaleOfDamage" type="radio" value="6">6</input>
-                <input  id="scaleOfDamage" ng-model="scaleOfDamage" type="radio" value="7">7</input>
-                <input  id="scaleOfDamage" ng-model="scaleOfDamage" type="radio" value="8">8</input>
-                <input  id="scaleOfDamage" ng-model="scaleOfDamage" type="radio" value="9">9</input>
-                <input  id="scaleOfDamage" ng-model="scaleOfDamage" type="radio" value="10">10</input>
+                <label for="description">Description</label>
+                <input class="form-control" id="description" ng-model="vm.description" type="text" aria-describedby="nameHelp" placeholder="Enter description">
               </div>
             </div>
           </div>
@@ -152,13 +119,12 @@
          <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
-                  <label for="original">is original</label></br>
-                <input  id="original" ng-model="original" type="radio" value="true">original</input>
-                <input  id="original" ng-model="original" type="radio" value="false">not original</input>
+                <label for="restauration">Restauration</label>
+                <input class="form-control" id="restauration" ng-model="vm.restauration" type="text" aria-describedby="nameHelp" placeholder="Enter restauration">
               </div>
               <div class="col-md-6">
-                <label for="originPlace">origin place</label>
-                <input class="form-control" id="originPlace" ng-model="originPlace" type="text" aria-describedby="nameHelp" placeholder="Enter origin_place">
+                <label for="originPlace">Origin Place</label>
+                <input class="form-control" id="originPlace" ng-model="vm.originPlace" type="text" aria-describedby="nameHelp" placeholder="Enter Origin Place">
               </div>
             </div>
           </div>
@@ -167,37 +133,54 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="storageLocation">Storage Location</label>
-                <input class="form-control" id="storageLocation" ng-model="storageLocation" type="text" aria-describedby="nameHelp" placeholder="Enter storage_location">
+                <input class="form-control" id="storageLocation" ng-model="vm.storageLocation" type="text" aria-describedby="nameHelp" placeholder="Enter storage_location">
               </div>
               <div class="col-md-6">
                 <label for="historicInformation">Historic Information</label>
-                <input class="form-control" id="historicInformation" ng-model="historicInformation" type="text" aria-describedby="nameHelp" placeholder="Enter historic information">
+                <input class="form-control" id="historicInformation" ng-model="vm.historicInformation" type="text" aria-describedby="nameHelp" placeholder="Enter historic information">
               </div>
             </div>
           </div>
-              <!-- coppia -->
-         <div class="form-group">
+          <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
-                <label for="description">Description</label>
-                <input class="form-control" id="description" ng-model="description" type="text" aria-describedby="nameHelp" placeholder="Enter description">
+                <label for="owner">Owner</label>
+                <input class="form-control" id="owner" ng-model="vm.owner" type="text" aria-describedby="nameHelp" placeholder="Enter owner">
+              </div>
+            </div>
+          </div>
+         <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6" >
+                  <label>Scale of Damage </label>
+                  <div class="btn-group">
+                  <select ng-model="vm.scaleOfDamage">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                  </select>
+                </div>
               </div>
               <div class="col-md-6">
-                <label for="restauration">Restauration</label>
-                <input class="form-control" id="restauration" ng-model="restauration" type="text" aria-describedby="nameHelp" placeholder="Enter restauration">
+                <input id="original" ng-model="vm.original" type="checkbox">
+                <label for="original"> Original</label>
               </div>
             </div>
           </div>
             <!-- singolo -->
           <div class="form-group">
-              <div class="form-row">
-              <div class="col-md-6">  
-            <label for="operator_id">operator id</label>
-            <input class="form-control" id="operatorId" ng-model="OperatorId" type="text" aria-describedby="nameHelp" placeholder="Enter operator id">
-          </div>
-        </div>
+            <div class="form-row">
+              
             </div>
-          <a class="btn btn-primary btn-block" href="login.html">Register</a>
+            </div>
+          <a class="btn btn-primary btn-block" ng-click="register()">Register</a>
         </form>
         
       </div>
@@ -208,6 +191,14 @@
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- Core plugin JavaScript-->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Modules-->
+  <script src= "scripts/app.js"></script>
+  <script src= "scripts/app.services.js"></script>
+  <!-- Services-->
+  <script src= "scripts/services/DataService.js"></script>
+  <!-- Controllers-->
+  <script src= "scripts/controllers/tables/RegisterEvidenceCtrl.js"></script>
+  <script src= "scripts/controllers/LoginCtrl.js"></script>
 </body>
 
 </html>

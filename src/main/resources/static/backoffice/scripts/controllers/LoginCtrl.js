@@ -10,7 +10,7 @@ app.controller('LoginCtrl', function ($scope, dataService, $http, $window) {
                 $scope.currentOperator = res.data;
                 if($scope.currentOperator.username == $scope.vm.username){
                     dataService.set($scope.currentOperator);
-                    if($scope.currentOperator.admin == true){
+                    if($scope.currentOperator.admin){
                         $window.location.href = "/backoffice/admin.html";
                     } else {
                         $window.location.href = "/backoffice/index.html";
