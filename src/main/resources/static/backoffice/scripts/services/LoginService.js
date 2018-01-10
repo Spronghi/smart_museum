@@ -10,8 +10,12 @@ function loginService($http, $cookies, $cookieStore) {
     function getCurrentId() {
       return $cookieStore.get('operatorId');
     }
+    function unset(){
+        $cookieStore.put('operatorId', 0);
+    }
     return {
       set: set,
+      unset: unset,
       getCurrentId: getCurrentId
     }
 }

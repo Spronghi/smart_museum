@@ -14,12 +14,13 @@
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
-      <!-- Angular -->
+    <!-- Angular -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-cookies.min.js"></script>
 </head>
 
-<body class="bodyBG" ng-controller="EvidenceCtrl" >
+<body class="bodyBG" ng-controller="ShowEvidenceCtrl" >
   <!--div class="container" ng-repeat=""-->
     <div class="card card-register mx-auto mt-5">
       <div class="card-header">Evidence</div>
@@ -30,23 +31,23 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="owner">Owner</label>
-                <input class="form-control" id="owner" ng-model="owner" type="text" readonly aria-describedby="nameHelp" placeholder="Enter owner">
+                <input class="form-control" id="owner" ng-model="evidence.owner" type="text" readonly aria-describedby="nameHelp" placeholder="Enter owner">
               </div>
-              <div class="col-md-6">
+              <!--div class="col-md-6">
                 <label for="possessor_id">Owner id</label>
-                <input class="form-control" id="ownerId" ng-model="ownerId" type="text" readonly aria-describedby="nameHelp" placeholder="Enter possessor">
-              </div>
+                <input class="form-control" id="ownerId" ng-model="evidence.ownerId" type="text" readonly aria-describedby="nameHelp" placeholder="Enter possessor">
+              </div-->
             </div>
           </div>
              <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
                 <label for="owner">Possessor</label>
-                <input class="form-control" id="possessor" ng-model="possessor" type="text" readonly aria-describedby="nameHelp" placeholder="Enter owner">
+                <input class="form-control" id="possessor" ng-model="evidence.possessor.name" type="text" readonly aria-describedby="nameHelp" placeholder="Enter owner">
               </div>
               <div class="col-md-6">
                 <label for="possessor_id">Possessor id</label>
-                <input class="form-control" id="possessor_id" ng-model="possessor_id" type="text" readonly aria-describedby="nameHelp" placeholder="Enter possessor">
+                <input class="form-control" id="possessor_id" ng-model="evidence.possessor.id" type="text" readonly aria-describedby="nameHelp" placeholder="Enter possessor">
               </div>
             </div>
           </div>
@@ -55,11 +56,11 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="number">Number</label>
-                <input class="form-control" id="number" ng-model="number" type="text" readonly aria-describedby="nameHelp" placeholder="Enter number">
+                <input class="form-control" id="number" ng-model="evidence.number" type="text" readonly aria-describedby="nameHelp" placeholder="Enter number">
               </div>
               <div class="col-md-6">
                 <label for="domain">Domain</label>
-                <input class="form-control" id="domain" ng-model="domain" type="text" readonly aria-describedby="nameHelp" placeholder="Enter domain">
+                <input class="form-control" id="domain" ng-model="evidence.domain" type="text" readonly aria-describedby="nameHelp" placeholder="Enter domain">
               </div>
             </div>
           </div>
@@ -68,11 +69,11 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="type">Type</label>
-                <input class="form-control" id="type" ng-model="type" type="text" readonly aria-describedby="nameHelp" placeholder="Enter type">
+                <input class="form-control" id="type" ng-model="evidence.type" type="text" readonly aria-describedby="nameHelp" placeholder="Enter type">
               </div>
               <div class="col-md-6">
                 <label for="title">Title</label>
-                <input class="form-control" id="title" ng-model="title" type="text" readonly aria-describedby="nameHelp" placeholder="Enter title">
+                <input class="form-control" id="title" ng-model="evidence.title" type="text" readonly aria-describedby="nameHelp" placeholder="Enter title">
               </div>
             </div>
           </div>
@@ -81,11 +82,11 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="material">Material</label>
-                <input class="form-control" id="material" ng-model="material" type="text" readonly aria-describedby="nameHelp" placeholder="Enter material">
+                <input class="form-control" id="material" ng-model="evidence.material" type="text" readonly aria-describedby="nameHelp" placeholder="Enter material">
               </div>
               <div class="col-md-6">
                 <label for="technique">Technique</label>
-                <input class="form-control" id="technique" ng-model="technique"type="text" readonly aria-describedby="nameHelp" placeholder="Enter technique">
+                <input class="form-control" id="technique" ng-model="evidence.technique"type="text" readonly aria-describedby="nameHelp" placeholder="Enter technique">
               </div>
             </div>
           </div>
@@ -94,11 +95,11 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="culture">Culture</label>
-                <input class="form-control" id="culture" ng-model="culture" type="text" readonly aria-describedby="nameHelp" placeholder="Enter culture">
+                <input class="form-control" id="culture" ng-model="evidence.culture" type="text" readonly aria-describedby="nameHelp" placeholder="Enter culture">
               </div>
               <div class="col-md-6">
                 <label for="period">Period</label>
-                <input class="form-control" id="period" ng-model="period" type="text" readonly aria-describedby="nameHelp" placeholder="Enter period">
+                <input class="form-control" id="period" ng-model="evidence.period" type="text" readonly aria-describedby="nameHelp" placeholder="Enter period">
               </div>
             </div>
           </div>
@@ -107,11 +108,11 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="author">Author</label>
-                <input class="form-control" id="author" ng-model="author" type="text" readonly aria-describedby="nameHelp" placeholder="Enter author">
+                <input class="form-control" id="author" ng-model="evidence.author" type="text" readonly aria-describedby="nameHelp" placeholder="Enter author">
               </div>
               <div class="col-md-6">
                 <label for="dimensions">Dimensions</label>
-                <input class="form-control" id="dimensions" ng-model="dimensions" type="text" readonly aria-describedby="nameHelp" placeholder="Enter dimensions">
+                <input class="form-control" id="dimensions" ng-model="evidence.dimensions" type="text" readonly aria-describedby="nameHelp" placeholder="Enter dimensions">
               </div>
             </div>
           </div>
@@ -120,11 +121,11 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="weight">Weight</label>
-                <input class="form-control" id="weight" ng-model="weight" type="text" readonly aria-describedby="nameHelp" placeholder="Enter weight">
+                <input class="form-control" id="weight" ng-model="evidence.weight" type="text" readonly aria-describedby="nameHelp" placeholder="Enter weight">
               </div>
               <div class="col-md-6">
                 <label for="value">Value</label>
-                <input class="form-control" id="value" ng-model="value" type="text" readonly aria-describedby="nameHelp" placeholder="Enter value">
+                <input class="form-control" id="value" ng-model="evidence.value" type="text" readonly aria-describedby="nameHelp" placeholder="Enter value">
               </div>
             </div>
           </div>
@@ -133,20 +134,20 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="otherData">Other_data</label>
-                <input class="form-control" id="otherData" ng-model="otherData" type="text" readonly aria-describedby="nameHelp" placeholder="Enter other_data">
+                <input class="form-control" id="otherData" ng-model="evidence.otherData" type="text" readonly aria-describedby="nameHelp" placeholder="Enter other_data">
               </div>
               <div class="col-md-6">
                   <label for="scaleOfDamage">Scale of damage</label></br>
-                <input  id="scaleOfDamage" ng-model="scaleOfDamage" type="radio" readonly value="1" checked>1</input>
-                <input  id="scaleOfDamage" ng-model="scaleOfDamage" type="radio" readonly value="2">2</input>
-                <input  id="scaleOfDamage" ng-model="scaleOfDamage" type="radio" readonly value="3">3</input>
-                <input  id="scaleOfDamage" ng-model="scaleOfDamage" type="radio" readonly value="4">4</input>
-                <input  id="scaleOfDamage" ng-model="scaleOfDamage" type="radio" readonly value="5">5</input>
-                <input  id="scaleOfDamage" ng-model="scaleOfDamage" type="radio" readonly value="6">6</input>
-                <input  id="scaleOfDamage" ng-model="scaleOfDamage" type="radio" readonly value="7">7</input>
-                <input  id="scaleOfDamage" ng-model="scaleOfDamage" type="radio" readonly value="8">8</input>
-                <input  id="scaleOfDamage" ng-model="scaleOfDamage" type="radio" readonly value="9">9</input>
-                <input  id="scaleOfDamage" ng-model="scaleOfDamage" type="radio" readonly value="10">10</input>
+                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" readonly value="1" checked>1</input>
+                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" readonly value="2">2</input>
+                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" readonly value="3">3</input>
+                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" readonly value="4">4</input>
+                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" readonly value="5">5</input>
+                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" readonly value="6">6</input>
+                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" readonly value="7">7</input>
+                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" readonly value="8">8</input>
+                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" readonly value="9">9</input>
+                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" readonly value="10">10</input>
               </div>
             </div>
           </div>
@@ -156,12 +157,12 @@
             <div class="form-row">
               <div class="col-md-6">
                   <label for="original">is original</label></br>
-                <input  id="original" ng-model="original" type="radio" readonly value="true">original</input>
-                <input  id="original" ng-model="original" type="radio" readonly value="false">not original</input>
+                <input  id="original" ng-model="evidence.original" type="radio" readonly value="true">original</input>
+                <input  id="original" ng-model="evidence.original" type="radio" readonly value="false">not original</input>
               </div>
               <div class="col-md-6">
                 <label for="originPlace">origin place</label>
-                <input class="form-control" id="originPlace" ng-model="originPlace" type="text" readonly aria-describedby="nameHelp" placeholder="Enter origin_place">
+                <input class="form-control" id="originPlace" ng-model="evidence.originPlace" type="text" readonly aria-describedby="nameHelp" placeholder="Enter origin_place">
               </div>
             </div>
           </div>
@@ -170,36 +171,40 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="storageLocation">Storage Location</label>
-                <input class="form-control" id="storageLocation" ng-model="storageLocation" type="text" readonly aria-describedby="nameHelp" placeholder="Enter storage_location">
+                <input class="form-control" id="storageLocation" ng-model="evidence.storageLocation" type="text" readonly aria-describedby="nameHelp" placeholder="Enter storage_location">
               </div>
               <div class="col-md-6">
                 <label for="historicInformation">Historic Information</label>
-                <input class="form-control" id="historicInformation" ng-model="historicInformation" type="text" readonly aria-describedby="nameHelp" placeholder="Enter historic information">
+                <input class="form-control" id="historicInformation" ng-model="evidence.historicInformation" type="text" readonly aria-describedby="nameHelp" placeholder="Enter historic information">
               </div>
             </div>
           </div>
-              <!-- coppia -->
+        <!-- coppia -->
          <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
                 <label for="description">Description</label>
-                <input class="form-control" id="description" ng-model="description" type="text" readonly aria-describedby="nameHelp" placeholder="Enter description">
+                <input class="form-control" id="description" ng-model="evidence.description" type="text" readonly aria-describedby="nameHelp" placeholder="Enter description">
               </div>
               <div class="col-md-6">
                 <label for="restauration">Restauration</label>
-                <input class="form-control" id="restauration" ng-model="restauration" type="text" readonly aria-describedby="nameHelp" placeholder="Enter restauration">
+                <input class="form-control" id="restauration" ng-model="evidence.restauration" type="text" readonly aria-describedby="nameHelp" placeholder="Enter restauration">
               </div>
             </div>
           </div>
-            <!-- singolo -->
-          <div class="form-group">
-              <div class="form-row">
+    <!-- coppia -->
+         <div class="form-group">
+            <div class="form-row">
               <div class="col-md-6">  
-            <label for="operator_id">operator id</label>
-            <input class="form-control" id="operatorId" ng-model="OperatorId" type="text" readonly aria-describedby="nameHelp" placeholder="Enter operator id">
+            <label for="operator_id">Operator id</label>
+            <input class="form-control" id="operatorId" ng-model="evidence.operator.id" type="text" readonly aria-describedby="nameHelp" placeholder="Enter operator id">
           </div>
-        </div>
+              <div class="col-md-6">
+                <label for="restauration">Original</label>
+                <input class="form-control" id="original" ng-model="evidence.original" type="text" readonly aria-describedby="nameHelp" placeholder="Enter original">
+              </div>
             </div>
+          </div>
           <a class="btn btn-primary btn-block" href="">Edit</a>
           <a class="btn btn-success btn-block" href="">Public</a>
           <a class="btn btn-danger btn-block" href="">Delete</a>
@@ -214,7 +219,8 @@
   <!-- Core plugin JavaScript-->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/EvidenceCtrl.js"></script>
+  <script src="scripts/app.services.js"></script>
+  <script src="scripts/controllers/show/ShowEvidenceCtrl.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,9 @@
-app.controller('LoginCtrl', function ($scope, loginService, operatorService, $http, $window) {
+app.controller('LoginCtrl', function ($scope, loginService, $http, $window) {
     $scope.currentOperator = [];
+    $scope.logout = function (){
+        loginService.unset();
+        $window.location.href = "/backoffice/login.html";
+    }
     $scope.login = function () {
         $http.get("/user/login/"+$scope.vm.username)
             .then(function (res) {
