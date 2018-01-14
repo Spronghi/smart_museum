@@ -8,12 +8,6 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Smartmuseum</title>
-  <!-- Bootstrap core CSS-->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom fonts for this template-->
-  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
 </head>
 
 <body class="bodyBG" ng-controller="ShowEvidenceCtrl" >
@@ -22,185 +16,151 @@
       <div class="card-header">Evidence</div>
       <div class="card-body">
         <form>
-            <!-- coppia -->
-          <div class="form-group" >
+            <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
-                <label for="owner">Owner</label>
-                <input class="form-control" id="owner" ng-model="evidence.owner" type="text" readonly aria-describedby="nameHelp" placeholder="Enter owner">
-              </div>
-              <!--div class="col-md-6">
-                <label for="possessor_id">Owner id</label>
-                <input class="form-control" id="ownerId" ng-model="evidence.ownerId" type="text" readonly aria-describedby="nameHelp" placeholder="Enter possessor">
-              </div-->
-            </div>
-          </div>
-             <div class="form-group">
-            <div class="form-row">
-              <div class="col-md-6">
-                <label for="owner">Possessor</label>
-                <input class="form-control" id="possessor" ng-model="evidence.possessor.name" type="text" readonly aria-describedby="nameHelp" placeholder="Enter owner">
+                <label for="number" style="color: #778899">ID: </label>
+                <label for="number">{{vm.evidence.id}}</label>
               </div>
               <div class="col-md-6">
-                <label for="possessor_id">Possessor id</label>
-                <input class="form-control" id="possessor_id" ng-model="evidence.possessor.id" type="text" readonly aria-describedby="nameHelp" placeholder="Enter possessor">
+                <label for="domain" style="color: #778899">Operator: </label>
+                <a href="/show-operator?id={{vm.evidence.operator.id}}" for="domain">{{vm.evidence.operator.username}}</a>
               </div>
             </div>
           </div>
-            <!-- coppia -->
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
-                <label for="number">Number</label>
-                <input class="form-control" id="number" ng-model="evidence.number" type="text" readonly aria-describedby="nameHelp" placeholder="Enter number">
+                <label for="number" style="color: #778899">Number: </label>
+                <label for="number">{{vm.evidence.number}}</label>
               </div>
               <div class="col-md-6">
-                <label for="domain">Domain</label>
-                <input class="form-control" id="domain" ng-model="evidence.domain" type="text" readonly aria-describedby="nameHelp" placeholder="Enter domain">
+                <label for="domain" style="color: #778899">Domain: </label>
+                <label for="domain">{{vm.evidence.domain}}</label>
               </div>
             </div>
           </div>
-            <!-- coppia -->
          <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
-                <label for="type">Type</label>
-                <input class="form-control" id="type" ng-model="evidence.type" type="text" readonly aria-describedby="nameHelp" placeholder="Enter type">
+                <label for="type" style="color: #778899">Type: </label>
+                <label for="type">{{vm.evidence.type}}</label>
               </div>
               <div class="col-md-6">
-                <label for="title">Title</label>
-                <input class="form-control" id="title" ng-model="evidence.title" type="text" readonly aria-describedby="nameHelp" placeholder="Enter title">
+                <label for="title" style="color: #778899">Title: </label>
+                <label for="title">{{vm.evidence.title}}</label>
               </div>
             </div>
           </div>
-            <!-- coppia -->
          <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
-                <label for="material">Material</label>
-                <input class="form-control" id="material" ng-model="evidence.material" type="text" readonly aria-describedby="nameHelp" placeholder="Enter material">
+                <label for="material" style="color: #778899">Material: </label>
+                <label for="material">{{vm.evidence.material}}</label>
               </div>
               <div class="col-md-6">
-                <label for="technique">Technique</label>
-                <input class="form-control" id="technique" ng-model="evidence.technique"type="text" readonly aria-describedby="nameHelp" placeholder="Enter technique">
+                <label for="technique" style="color: #778899">Technique: </label>
+                <label for="technique">{{vm.evidence.technique}}</label>
               </div>
             </div>
           </div>
-            <!-- coppia -->
          <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
-                <label for="culture">Culture</label>
-                <input class="form-control" id="culture" ng-model="evidence.culture" type="text" readonly aria-describedby="nameHelp" placeholder="Enter culture">
+                <label for="culture" style="color: #778899">Culture: </label>
+                  <label for="technique">{{vm.evidence.culture}}</label>
               </div>
               <div class="col-md-6">
-                <label for="period">Period</label>
-                <input class="form-control" id="period" ng-model="evidence.period" type="text" readonly aria-describedby="nameHelp" placeholder="Enter period">
+                <label for="period" style="color: #778899">Period: </label>
+                  <label for="technique">{{vm.evidence.period}}</label>
               </div>
             </div>
           </div>
-              <!-- coppia -->
          <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
-                <label for="author">Author</label>
-                <input class="form-control" id="author" ng-model="evidence.author" type="text" readonly aria-describedby="nameHelp" placeholder="Enter author">
+                <label for="author" style="color: #778899">Author: </label>
+                <label for="author">{{vm.evidence.author}}</label>
               </div>
               <div class="col-md-6">
-                <label for="dimensions">Dimensions</label>
-                <input class="form-control" id="dimensions" ng-model="evidence.dimensions" type="text" readonly aria-describedby="nameHelp" placeholder="Enter dimensions">
+                <label for="dimensions" style="color: #778899">Dimensions: </label>
+                <label for="dimensions">{{vm.evidence.dimensions}}</label>
               </div>
             </div>
           </div>
-              <!-- coppia -->
          <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
-                <label for="weight">Weight</label>
-                <input class="form-control" id="weight" ng-model="evidence.weight" type="text" readonly aria-describedby="nameHelp" placeholder="Enter weight">
+                <label for="weight" style="color: #778899">Weight: </label>
+                <label for="weight">{{vm.evidence.dimensions}}</label>
               </div>
               <div class="col-md-6">
-                <label for="value">Value</label>
-                <input class="form-control" id="value" ng-model="evidence.value" type="text" readonly aria-describedby="nameHelp" placeholder="Enter value">
+                <label for="value" style="color: #778899">Value: </label>
+                <label for="value">{{vm.evidence.value}}</label>
               </div>
             </div>
           </div>
-              <!-- coppia -->
          <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
-                <label for="otherData">Other_data</label>
-                <input class="form-control" id="otherData" ng-model="evidence.otherData" type="text" readonly aria-describedby="nameHelp" placeholder="Enter other_data">
+                <label for="otherData" style="color: #778899">Other Data: </label>
+                <label for="value">{{vm.evidence.otherData}}</label>
               </div>
               <div class="col-md-6">
-                  <label for="scaleOfDamage">Scale of damage</label></br>
-                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" readonly value="1" checked>1</input>
-                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" readonly value="2">2</input>
-                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" readonly value="3">3</input>
-                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" readonly value="4">4</input>
-                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" readonly value="5">5</input>
-                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" readonly value="6">6</input>
-                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" readonly value="7">7</input>
-                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" readonly value="8">8</input>
-                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" readonly value="9">9</input>
-                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" readonly value="10">10</input>
+                <label for="description" style="color: #778899">Description: </label>
+                  <label for="value">{{vm.evidence.description}}</label>
               </div>
             </div>
           </div>
-        
-           <!-- coppia -->
          <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
-                  <label for="original">is original</label></br>
-                <input  id="original" ng-model="evidence.original" type="radio" readonly value="true">original</input>
-                <input  id="original" ng-model="evidence.original" type="radio" readonly value="false">not original</input>
+                <label for="restauration" style="color: #778899">Restauration: </label>
+                  <label for="value">{{vm.evidence.restauration}}</label>
               </div>
               <div class="col-md-6">
-                <label for="originPlace">origin place</label>
-                <input class="form-control" id="originPlace" ng-model="evidence.originPlace" type="text" readonly aria-describedby="nameHelp" placeholder="Enter origin_place">
+                <label for="originPlace" style="color: #778899">Origin Place: </label>
+                  <label for="value">{{vm.evidence.originPlace}}</label>
               </div>
             </div>
           </div>
-              <!-- coppia -->
          <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
-                <label for="storageLocation">Storage Location</label>
-                <input class="form-control" id="storageLocation" ng-model="evidence.storageLocation" type="text" readonly aria-describedby="nameHelp" placeholder="Enter storage_location">
+                <label for="storageLocation" style="color: #778899">Storage Location: </label>
+                  <label for="value">{{vm.evidence.storageLocation}}</label>
               </div>
               <div class="col-md-6">
-                <label for="historicInformation">Historic Information</label>
-                <input class="form-control" id="historicInformation" ng-model="evidence.historicInformation" type="text" readonly aria-describedby="nameHelp" placeholder="Enter historic information">
+                <label for="historicInformation" style="color: #778899">Historic Information: </label>
+                  <label for="value">{{vm.evidence.historicInformation}}</label>
               </div>
             </div>
           </div>
-        <!-- coppia -->
-         <div class="form-group">
+          <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
-                <label for="description">Description</label>
-                <input class="form-control" id="description" ng-model="evidence.description" type="text" readonly aria-describedby="nameHelp" placeholder="Enter description">
-              </div>
-              <div class="col-md-6">
-                <label for="restauration">Restauration</label>
-                <input class="form-control" id="restauration" ng-model="evidence.restauration" type="text" readonly aria-describedby="nameHelp" placeholder="Enter restauration">
+                <label for="owner" style="color: #778899">Owner: </label>
+                  <label for="value">{{vm.evidence.owner}}</label>
               </div>
             </div>
           </div>
-    <!-- coppia -->
          <div class="form-group">
             <div class="form-row">
-              <div class="col-md-6">  
-            <label for="operator_id">Operator id</label>
-            <input class="form-control" id="operatorId" ng-model="evidence.operator.id" type="text" readonly aria-describedby="nameHelp" placeholder="Enter operator id">
-          </div>
+              <div class="col-md-6" >
+                  <label style="color: #778899">Scale of Damage: </label>
+                  <label for="value">{{vm.evidence.scaleOfDamage}}</label>
+              </div>
               <div class="col-md-6">
-                <label for="restauration">Original</label>
-                <input class="form-control" id="original" ng-model="evidence.original" type="text" readonly aria-describedby="nameHelp" placeholder="Enter original">
+                <label for="original" style="color: #778899">Original: </label>
+                  <label for="value">{{vm.evidence.original}}</label>
               </div>
             </div>
           </div>
+          <div class="form-group">
+            <div class="form-row">
+              
+            </div>
+            </div>
           <a class="btn btn-primary btn-block" href="">Edit</a>
           <a class="btn btn-success btn-block" href="">Public</a>
           <a class="btn btn-danger btn-block" href="">Delete</a>
@@ -209,14 +169,6 @@
       </div>
     </div>
   </div>
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-cookies.min.js"></script>
 
   <script src="scripts/app.js"></script>
   <script src="scripts/app.services.js"></script>

@@ -8,12 +8,6 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Smartmuseum</title>
-  <!-- Bootstrap core CSS-->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom fonts for this template-->
-  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
 </head>
 
 <body class="bodyBG" ng-controller="ShowOperatorCtrl" >
@@ -25,12 +19,12 @@
        <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
-                <label for="name">Name</label>
-                <input class="form-control" id="name" ng-model="operator.name" type="text" readonly aria-describedby="nameHelp" placeholder="Enter name">
+                <label style="color: #778899" for="name">Name: </label>
+                <label for="value">{{operator.name}}</label>
               </div> 
               <div class="col-md-6">
-                <label for="surname">Surname</label>
-                <input class="form-control" id="surname" ng-model="operator.surname" type="text" readonly aria-describedby="nameHelp" placeholder="Enter surname">
+                <label style="color: #778899" for="surname">Surname: </label>
+                <label for="value">{{operator.surname}}</label>
               </div>
             </div>
           </div>
@@ -38,31 +32,22 @@
          <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
-                <label for="username">Username</label>
-                <input class="form-control" id="username" ng-model="operator.username" type="text" readonly aria-describedby="nameHelp" placeholder="Enter username">
+                <label style="color: #778899" for="username">Username: </label>
+                <label for="value">{{operator.username}}</label>
               </div> 
               <div class="col-md-6">
-                <label for="password">Password</label>
-                <input class="form-control" id="password" ng-model="operator.password" type="text" readonly  aria-describedby="nameHelp" placeholder="Enter password">
+                <label style="color: #778899" for="email">Email: </label>
+                <label for="value">{{operator.email}}</label>
               </div>
             </div>
           </div>
             
           <div class="form-group">
             <div class="form-row">
-              <div class="col-md-6">
-                <label for="email">Email</label>
-                <input class="form-control" id="email" ng-model="operator.email" type="text" readonly aria-describedby="nameHelp" placeholder="Enter email">
-              </div> 
+               
               <div class="col-md-6" >
-                  <label for="museum">Museum</label></br>
-                <div class="btn-group">
-                  <button type="button" class="btn btn-default dropdown-toggle" readonly  data-toggle="dropdown">Museum<span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu" role="menu" ng-repeat="museum in museums">
-                    <li>{{museum.name}}</li>
-                  </ul>
-                </div>
+                <label style="color: #778899" for="museum">Museum: </label></br>
+                <a href="/show-museum?id={{operator.museum.id}}">{{operator.museum.name}}</a>
               </div>
             </div>
           </div>
@@ -74,16 +59,6 @@
       </div>
     </div>
   </div>
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-cookies.min.js"></script>
-
-  
   <script src="scripts/app.js"></script>
   <script src="scripts/app.services.js"></script>
   <script src="scripts/services/LoginService.js"></script>
