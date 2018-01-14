@@ -42,6 +42,18 @@ var app = angular.module('BackofficeApp',['app.services', 'ngRoute'])
                 .when("/register-evidence", {
                     templateUrl : "backoffice/register/register-evidence.html",
                     controller : "RegisterEvidenceCtrl"
+                })
+                .when("/show-operator", {
+                    templateUrl : "backoffice/show/show-operator.html",
+                    controller : "ShowOperatorCtrl"
+                })
+                .when("/show-museum", {
+                    templateUrl : "backoffice/show/show-museum.html",
+                    controller : "ShowMuseumCtrl"
+                })
+                .when("/show-evidence", {
+                    templateUrl : "backoffice/show/show-evidence.html",
+                    controller : "ShowEvidenceCtrl"
                 });
             });
 
