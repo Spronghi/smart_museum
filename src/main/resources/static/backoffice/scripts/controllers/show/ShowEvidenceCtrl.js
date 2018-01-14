@@ -1,6 +1,11 @@
-app.controller('ShowEvidenceCtrl', function ($location, $scope, $http) {
+app.controller('ShowEvidenceCtrl', function ($window, $location, $scope, $http) {
+    $scope.vm = [];
     $http.get("/user/evidence/"+$location.search().id)
         .then(function (res) {
-            $scope.evidence = res.data;
+            $scope.vm.evidence = res.data;
         });
+    var showOperator = function(){
+        $window.location.href = "/backoffice/show/show-operator?id="+$scope.vm.evidence.operator.id;
+
+    }
 });

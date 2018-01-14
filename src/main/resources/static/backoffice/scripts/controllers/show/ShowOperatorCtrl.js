@@ -4,10 +4,9 @@ app.controller('ShowOperatorCtrl', function (dataService, $location, $scope, $ht
         .then(function (res) {
             $scope.operator = res.data;
         });
-        $http.get("/user/museums")
-        .then(function (res) {
-            $scope.museums = res.data;
-        });
+        var showMuseum = function(){
+            $window.location.href = "/backoffice/show/show-museum?id="+$scope.operator.museum.id;
+        }
     } else {
         $window.location.href = "/backoffice/error.html?error=Permission error";
     }
