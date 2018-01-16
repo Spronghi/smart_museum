@@ -7,6 +7,12 @@ app.controller('ShowOperatorCtrl', function (dataService, $location, $scope, $ht
         var showMuseum = function(){
             $window.location.href = "/backoffice/show/show-museum?id="+$scope.operator.museum.id;
         }
+        var deleteRow = function(){
+            $http.delete("/user/museum/"+$location.search().id)
+                .then(function (res) {
+                    $scope.putResultMessage = res.data;
+                });
+        }
     } else {
         $window.location.href = "/backoffice/error.html?error=Permission error";
     }
