@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,8 +21,8 @@ public class Flags implements Serializable {
     private int id;  
 	@Column(name="show_owner")
     private boolean owner;
-	@Column(name="show_possessor")
-	private boolean possessor;
+	@Column(name="show_number")	
+	private boolean number;
 	@Column(name="show_domain")	
 	private boolean domain;
 	@Column(name="show_type")	
@@ -57,11 +57,9 @@ public class Flags implements Serializable {
 	private boolean extendedDescription;
 	@Column(name="show_short_description")	
 	private boolean shortDescription;
-	@Column(name="show_media")	
-	private boolean media;
 	@Column(name="show_author")
     private boolean author;
-	@ManyToOne
+	@OneToOne
     @JoinColumn(name = "evidence_id")
 	private Evidence evidence;
 	
@@ -85,12 +83,12 @@ public class Flags implements Serializable {
 		this.owner = owner;
 	}
 
-	public boolean isPossessor() {
-		return possessor;
+	public boolean isNumber() {
+		return number;
 	}
 
-	public void setPossessor(boolean possessor) {
-		this.possessor = possessor;
+	public void setNumber(boolean number) {
+		this.number = number;
 	}
 
 	public boolean isDomain() {
@@ -227,14 +225,6 @@ public class Flags implements Serializable {
 
 	public void setShortDescription(boolean shortDescription) {
 		this.shortDescription = shortDescription;
-	}
-
-	public boolean isMedia() {
-		return media;
-	}
-
-	public void setMedia(boolean media) {
-		this.media = media;
 	}
 
 	public boolean isAuthor() {

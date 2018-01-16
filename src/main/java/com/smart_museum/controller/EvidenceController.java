@@ -55,6 +55,7 @@ public class EvidenceController {
 	}
 	@PutMapping("evidence")
 	public ResponseEntity<Evidence> updateEvidence(@RequestBody Evidence evidence) {
+	    System.out.println(evidence);
 		evidenceService.updateEvidence(evidence);
 		return new ResponseEntity<Evidence>(evidence, HttpStatus.OK);
 	}

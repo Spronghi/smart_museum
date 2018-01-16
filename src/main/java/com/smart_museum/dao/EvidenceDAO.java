@@ -53,7 +53,6 @@ public class EvidenceDAO implements IEvidenceDAO {
 		evd.setOtherData(evidence.getOtherData());
 		evd.setOwner(evidence.getOwner());
 		evd.setPeriod(evidence.getPeriod());
-		evd.setPossessor(evidence.getPossessor());
 		evd.setPublic(evidence.isPublic());
 		evd.setWeight(evidence.getWeight());
 		entityManager.flush();

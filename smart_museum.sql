@@ -54,15 +54,14 @@ CREATE TABLE IF NOT EXISTS evidence(
 	restauration TEXT default NULL,
 	operator_id int not null,
 	is_public boolean default 0,
-	primary key(id,possessor_id),
+	primary key(id,museum_id),
 	foreign key(operator_id) references operator(id),
-	foreign key(possessor_id) references museum(id)
+	foreign key(museum_id) references museum(id)
 );
 
 CREATE TABLE IF NOT EXISTS show_flags(
 	id int not null auto_increment,
 	show_owner boolean not null default 0,
-	show_possessor boolean not null default 0,
     show_number boolean not null default 0,
 	show_domain boolean not null default 0,
 	show_type boolean not null default 0,
@@ -83,20 +82,9 @@ CREATE TABLE IF NOT EXISTS show_flags(
 	show_short_description boolean not null default 0,
 	show_author boolean not null default 0,
 	evidence_id int not null,
-	primary key(id),
+	primary key(id, evidence_id),
 	foreign key(evidence_id) references evidence(id)
 );
-
-CREATE TABLE IF NOT EXISTS media(
-	id int not null auto_increment,
-	url varchar (500) not null,
-	type varchar (50) default null,
-	shows boolean not null default 0,
-	evidence_id int not null,
-	primary key(id),
-	foreign key(evidence_id) references evidence(id)
-);
-
 
 
 

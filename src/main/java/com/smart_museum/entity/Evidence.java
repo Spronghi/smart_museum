@@ -27,9 +27,6 @@ public class Evidence implements Serializable{
     private Museum museum;
 	@Column(name="owner")
     private String owner;
-	@ManyToOne
-    @JoinColumn(name="possessor_id")
-    private Museum possessor;
 	@Column(name="number")
     private int number;
 	@Column(name="domain")
@@ -98,12 +95,6 @@ public class Evidence implements Serializable{
 	}
 	public void setOwner(String owner) {
 		this.owner = owner;
-	}
-	public Museum getPossessor() {
-		return possessor;
-	}
-	public void setPossessor(Museum possessor) {
-		this.possessor = possessor;
 	}
 	public int getNumber() {
 		return number;

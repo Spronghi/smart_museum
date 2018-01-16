@@ -10,7 +10,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
-import com.smart_museum.entity.Article;
 import com.smart_museum.entity.Evidence;
 import com.smart_museum.entity.Museum;
 import com.smart_museum.entity.Operator;
@@ -36,19 +35,6 @@ public class RestClientUtil {
         Operator operator= responseEntity.getBody();
         return operator;
     }
-	public void getAllArticlesDemo() {
-		HttpHeaders headers = new HttpHeaders();
-		headers.setContentType(MediaType.APPLICATION_JSON);
-        RestTemplate restTemplate = new RestTemplate();
-	    String url = "http://localhost:8080/user/articles";
-        HttpEntity<String> requestEntity = new HttpEntity<String>(headers);
-        ResponseEntity<Article[]> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity, Article[].class);
-        Article[] articles = responseEntity.getBody();
-        for(Article article : articles) {
-              System.out.println("Id:"+article.getArticleId()+", Title:"+article.getTitle()
-                      +", Category: "+article.getCategory());
-        }
-    }
 	public void addEvidenceDemo() {
     	HttpHeaders headers = new HttpHeaders();
     	headers.setContentType(MediaType.APPLICATION_JSON);
@@ -59,7 +45,6 @@ public class RestClientUtil {
 	    obj.setAuthor("Mia madre");
 	    obj.setDescription("Che opera!");
 	    obj.setCreationDate(new Date());
-	    obj.setPossessor(getMuseumByIdDemo(1));
 	    obj.setMuseum(getMuseumByIdDemo(1));
 	    obj.setOperator(getOperatorByIdDemo(1));
 	    HttpEntity<Evidence> requestEntity = new HttpEntity<Evidence>(obj, headers);
@@ -99,6 +84,20 @@ public class RestClientUtil {
         URI uri = restTemplate.postForLocation(url, requestEntity);
         System.out.println(uri.getPath());    	
     }
+    /*
+	public void getAllArticlesDemo() {
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+        RestTemplate restTemplate = new RestTemplate();
+	    String url = "http://localhost:8080/user/articles";
+        HttpEntity<String> requestEntity = new HttpEntity<String>(headers);
+        ResponseEntity<Article[]> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity, Article[].class);
+        Article[] articles = responseEntity.getBody();
+        for(Article article : articles) {
+              System.out.println("Id:"+article.getArticleId()+", Title:"+article.getTitle()
+                      +", Category: "+article.getCategory());
+        }
+    }
     public void addArticleDemo() {
     	HttpHeaders headers = new HttpHeaders();
     	headers.setContentType(MediaType.APPLICATION_JSON);
@@ -131,15 +130,11 @@ public class RestClientUtil {
         HttpEntity<Article> requestEntity = new HttpEntity<Article>(headers);
         restTemplate.exchange(url, HttpMethod.DELETE, requestEntity, Void.class, 4);        
     }
+    */
     public static void main(String args[]) {
     	RestClientUtil util = new RestClientUtil();
-    	util.addMuseumDemo();
-    	//util.addOperatorDemo();
-    	//util.addEvidenceDemo();
-    	//util.getArticleByIdDemo();
-    	//util.getAllArticlesDemo();
-    	//util.addArticleDemo();
-    	//util.updateArticleDemo();
-    	//util.deleteArticleDemo();
+    	//util.addMuseumDemo();
+    	util.addOperatorDemo();
+    	util.addEvidenceDemo();
     }    
 }
