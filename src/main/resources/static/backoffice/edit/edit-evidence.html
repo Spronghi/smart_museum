@@ -16,7 +16,7 @@
   <link href="../css/sb-admin.css" rel="stylesheet">
 </head>
 
-<body class="bodyBG" ng-controller="ShowEvidenceCtrl" >
+<body class="bodyBG">
   <!--div class="container" ng-repeat=""-->
     <div class="card card-register mx-auto mt-5">
       <div class="card-header">Edit Evidence</div>
@@ -33,18 +33,6 @@
                 <label for="possessor_id">Owner id</label>
                 <input class="form-control" id="ownerId" ng-model="evidence.ownerId" type="text" aria-describedby="nameHelp" placeholder="Enter possessor">
               </div-->
-            </div>
-          </div>
-             <div class="form-group">
-            <div class="form-row">
-              <div class="col-md-6">
-                <label for="owner">Possessor</label>
-                <input class="form-control" id="possessor" ng-model="evidence.possessor.name" type="text" aria-describedby="nameHelp" placeholder="Enter owner">
-              </div>
-              <div class="col-md-6">
-                <label for="possessor_id">Possessor id</label>
-                <input class="form-control" id="possessor_id" ng-model="evidence.possessor.id" type="text" aria-describedby="nameHelp" placeholder="Enter possessor">
-              </div>
             </div>
           </div>
             <!-- coppia -->
@@ -133,17 +121,21 @@
                 <input class="form-control" id="otherData" ng-model="evidence.otherData" type="text" aria-describedby="nameHelp" placeholder="Enter other_data">
               </div>
               <div class="col-md-6">
-                  <label for="scaleOfDamage">Scale of damage</label></br>
-                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" value="1" checked>1</input>
-                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" value="2">2</input>
-                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" value="3">3</input>
-                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" value="4">4</input>
-                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" value="5">5</input>
-                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" value="6">6</input>
-                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" value="7">7</input>
-                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" value="8">8</input>
-                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" value="9">9</input>
-                <input  id="scaleOfDamage" ng-model="evidence.scaleOfDamage" type="radio" value="10">10</input>
+                  <label>Scale of Damage </label>
+                  <div class="btn-group">
+                  <select ng-model="evidence.scaleOfDamage">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                  </select>
+                </div>
               </div>
             </div>
           </div>
@@ -152,9 +144,8 @@
          <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
-                  <label for="original">is original</label></br>
-                <input  id="original" ng-model="evidence.original" type="radio" value="true">original</input>
-                <input  id="original" ng-model="evidence.original" type="radio" value="false">not original</input>
+                <input id="original" ng-model="evidence.original" type="checkbox">
+                <label for="original"> Original</label>
               </div>
               <div class="col-md-6">
                 <label for="originPlace">origin place</label>
@@ -188,21 +179,8 @@
               </div>
             </div>
           </div>
-    <!-- coppia -->
-         <div class="form-group">
-            <div class="form-row">
-              <div class="col-md-6">  
-            <label for="operator_id">Operator id</label>
-            <input class="form-control" id="operatorId" ng-model="evidence.operator.id" type="text" aria-describedby="nameHelp" placeholder="Enter operator id">
-          </div>
-              <div class="col-md-6">
-                <label for="restauration">Original</label>
-                <input class="form-control" id="original" ng-model="evidence.original" type="text" aria-describedby="nameHelp" placeholder="Enter original">
-              </div>
-            </div>
-          </div>
-          <a class="btn btn-primary btn-block" href="">Save</a>
-          <a class="btn btn-danger btn-block" href="">Cancel</a>
+          <a class="btn btn-primary btn-block" href="/show-evidence?id={{evidence.id}}" ng-click="edit()">Save</a>
+          <a class="btn btn-danger btn-block" href="/show-evidence?id={{evidence.id}}">Cancel</a>
         </form>
         
       </div>
@@ -213,14 +191,6 @@
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- Core plugin JavaScript-->
   <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
-        <!-- Angular -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-cookies.min.js"></script>
-
-  <script src="../scripts/app.js"></script>
-  <script src="../scripts/app.services.js"></script>
-  <script src="../scripts/controllers/show/ShowEvidenceCtrl.js"></script>
 </body>
 
 </html>

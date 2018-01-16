@@ -10,12 +10,12 @@
   <title>Smartmuseum</title>
 </head>
 
-<body class="bodyBG" ng-controller="ShowOperatorCtrl" >
+<body class="bodyBG" >
   
     <div class="card card-register mx-auto mt-5">
       <div class="card-header">Operator</div>
       <div class="card-body">
-        <form>
+       <form>
        <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
@@ -28,7 +28,6 @@
               </div>
             </div>
           </div>
-            
          <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
@@ -41,21 +40,17 @@
               </div>
             </div>
           </div>
-            
           <div class="form-group">
             <div class="form-row">
-               
               <div class="col-md-6" >
                 <label style="color: #778899" for="museum">Museum: </label></br>
                 <a href="/show-museum?id={{operator.museum.id}}">{{operator.museum.name}}</a>
               </div>
             </div>
           </div>
-        
-          <a class="btn btn-primary btn-block" href="">Edit</a>
-          <a class="btn btn-danger btn-block" href="login.html">Delete</a>
+          <a class="btn btn-primary btn-block" href="/edit-operator?id={{operator.id}}">Edit</a>
+          <a class="btn btn-danger btn-block" ng-click="deleteRow()" href="/table-operators">Delete</a>
         </form>
-        
       </div>
     </div>
   </div>
