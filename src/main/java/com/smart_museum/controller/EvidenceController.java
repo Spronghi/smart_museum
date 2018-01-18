@@ -1,4 +1,5 @@
 package com.smart_museum.controller;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,13 +17,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.smart_museum.entity.Evidence;
+import com.smart_museum.entity.Flags;
 import com.smart_museum.service.IEvidenceService;
+import com.smart_museum.service.IFlagsService;
 
 @Controller
 @RequestMapping("user")
 public class EvidenceController {
 	@Autowired
 	private IEvidenceService evidenceService;
+	@Autowired
+	private IFlagsService flagsService;
 	@GetMapping("evidence/{id}")
 	public ResponseEntity<Evidence> getEvidenceById(@PathVariable("id") Integer id) {
 		Evidence evidence = evidenceService.getEvidenceById(id);
@@ -45,7 +50,11 @@ public class EvidenceController {
 	}
 	@PostMapping("evidence")
 	public ResponseEntity<Void> addEvidence(@RequestBody Evidence evidence, UriComponentsBuilder builder) {
-        boolean flag = evidenceService.addEvidence(evidence);
+        evidence.setCreationDate(new Date());
+		boolean flag = evidenceService.addEvidence(evidence);
+        Flags evidenceFlags = new Flags();
+        evidenceFlags.setEvidence(evidence);
+        flagsService.addFlags(evidenceFlags);
         if (flag == false) {
         	return new ResponseEntity<Void>(HttpStatus.CONFLICT);
         }
