@@ -133,7 +133,7 @@ public class RestClientUtil {
     */
     public static void main(String args[]) {
     	RestClientUtil util = new RestClientUtil();
-    	//util.addMuseumDemo();
+    	util.addMuseumDemo();
     	util.addOperatorDemo();
     	util.addEvidenceDemo();
     }    
