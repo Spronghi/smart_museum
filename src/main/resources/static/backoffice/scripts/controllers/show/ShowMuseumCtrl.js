@@ -3,7 +3,7 @@ app.controller('ShowMuseumCtrl', function ($location, $scope, $http) {
         .then(function (res) {
             $scope.museum = res.data;
         });
-    var deleteRow = function(){
+    $scope.deleteRow = function(){
         $http.delete("/user/museum/"+$location.search().id)
             .then(function (res) {
                 $scope.putResultMessage = res.data;

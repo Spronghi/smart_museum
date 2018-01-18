@@ -4,10 +4,11 @@ app.controller('ShowEvidenceCtrl', function ($window, $location, $scope, $http) 
         .then(function (res) {
             $scope.vm.evidence = res.data;
         });
-    var deleteRow = function(){
+    $scope.deleteRow = function(){
+        
         $http.delete("/user/evidence/"+$location.search().id)
             .then(function (res) {
-                $scope.putResultMessage = res.data;
+                $scope.deleteResultMessage = res.data;
             });
     }
     var showOperator = function(){
