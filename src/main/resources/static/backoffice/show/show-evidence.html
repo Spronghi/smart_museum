@@ -162,8 +162,8 @@
             </div>
             </div>
           <a class="btn btn-primary btn-block" href="/edit-evidence?id={{vm.evidence.id}}">Edit</a>
-          <a class="btn btn-success btn-block" href="">Public</a>
-          <a class="btn btn-danger btn-block" ng-click="deleteRow()" href="/table-evidences">Delete</a>
+          <a class="btn btn-success btn-block" href="/public-evidence?id={{vm.evidence.id}}">Public</a>
+          <a class="btn btn-danger btn-block" href="/table-evidences" ng-click="deleteRow()" >Delete</a>
         </form>
         
       </div>

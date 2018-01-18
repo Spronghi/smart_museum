@@ -66,6 +66,10 @@ var app = angular.module('BackofficeApp',['app.services', 'ngRoute'])
                 .when("/edit-evidence", {
                     templateUrl : "backoffice/edit/edit-evidence.html",
                     controller : "EditEvidenceCtrl"
+                })
+                .when("/public-evidence", {
+                    templateUrl : "backoffice/show/public-evidence.html",
+                    controller : "PublicEvidenceCtrl"
                 });
             });
 

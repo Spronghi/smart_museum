@@ -33,12 +33,12 @@
               <div class="col-md-6">
                 <label for="number" style="color: #778899">Number: </label>
                 <label for="number">{{vm.evidence.number}}</label>
-                  <input type="checkbox" ng-model="show_number">
+                  <input type="checkbox" ng-model="flags.number">
               </div>
               <div class="col-md-6">
                 <label for="domain" style="color: #778899">Domain: </label>
                 <label for="domain">{{vm.evidence.domain}}</label>
-                  <input type="checkbox" ng-model="show_domain">
+                  <input type="checkbox" ng-model="flags.domain">
               </div>
             </div>
           </div>
@@ -47,12 +47,12 @@
               <div class="col-md-6">
                 <label for="type" style="color: #778899">Type: </label>
                 <label for="type">{{vm.evidence.type}}</label>
-                  <input type="checkbox" ng-model="show_type">
+                  <input type="checkbox" ng-model="flags.type">
               </div>
               <div class="col-md-6">
-                <label for="title" style="color: #778899">Title: </label>
-                <label for="title">{{vm.evidence.title}}</label>
-                  <input type="checkbox" ng-model="show_title">
+                <label for="original" style="color: #778899">Original: </label>
+                  <label for="value">{{vm.evidence.original}}</label>
+                  <input type="checkbox" ng-model="flags.original">
               </div>
             </div>
           </div>
@@ -61,12 +61,12 @@
               <div class="col-md-6">
                 <label for="material" style="color: #778899">Material: </label>
                 <label for="material">{{vm.evidence.material}}</label>
-                  <input type="checkbox" ng-model="show_material">
+                  <input type="checkbox" ng-model="flags.material">
               </div>
               <div class="col-md-6">
                 <label for="technique" style="color: #778899">Technique: </label>
                 <label for="technique">{{vm.evidence.technique}}</label>
-                  <input type="checkbox" ng-model="show_technique">
+                  <input type="checkbox" ng-model="flags.technique">
               </div>
             </div>
           </div>
@@ -75,12 +75,12 @@
               <div class="col-md-6">
                 <label for="culture" style="color: #778899">Culture: </label>
                   <label for="technique">{{vm.evidence.culture}}</label>
-                  <input type="checkbox" ng-model="show_culture">
+                  <input type="checkbox" ng-model="flags.culture">
               </div>
               <div class="col-md-6">
                 <label for="period" style="color: #778899">Period: </label>
                   <label for="technique">{{vm.evidence.period}}</label>
-                  <input type="checkbox" ng-model="show_period">
+                  <input type="checkbox" ng-model="flags.period">
               </div>
             </div>
           </div>
@@ -89,12 +89,12 @@
               <div class="col-md-6">
                 <label for="author" style="color: #778899">Author: </label>
                 <label for="author">{{vm.evidence.author}}</label>
-                  <input type="checkbox" ng-model="show_author">
+                  <input type="checkbox" ng-model="flags.author">
               </div>
               <div class="col-md-6">
                 <label for="dimensions" style="color: #778899">Dimensions: </label>
                 <label for="dimensions">{{vm.evidence.dimensions}}</label>
-                  <input type="checkbox" ng-model="show_dimensions">
+                  <input type="checkbox" ng-model="flags.dimensions">
               </div>
             </div>
           </div>
@@ -103,12 +103,12 @@
               <div class="col-md-6">
                 <label for="weight" style="color: #778899">Weight: </label>
                 <label for="weight">{{vm.evidence.weight}}</label>
-                  <input type="checkbox" ng-model="show_weight">
+                  <input type="checkbox" ng-model="flags.weight">
               </div>
               <div class="col-md-6">
                 <label for="value" style="color: #778899">Value: </label>
                 <label for="value">{{vm.evidence.value}}</label>
-                  <input type="checkbox" ng-model="show_value">
+                  <input type="checkbox" ng-model="flags.value">
               </div>
             </div>
           </div>
@@ -117,12 +117,12 @@
               <div class="col-md-6">
                 <label for="otherData" style="color: #778899">Other Data: </label>
                 <label for="value">{{vm.evidence.otherData}}</label>
-                  <input type="checkbox" ng-model="show_other_data">
+                  <input type="checkbox" ng-model="flags.otherData">
               </div>
               <div class="col-md-6">
                 <label for="description" style="color: #778899">Description: </label>
                   <label for="value">{{vm.evidence.description}}</label>
-                  <input type="checkbox" ng-model="show_description">
+                  <input type="checkbox" ng-model="flags.description">
               </div>
             </div>
           </div>
@@ -131,12 +131,12 @@
               <div class="col-md-6">
                 <label for="restauration" style="color: #778899">Restauration: </label>
                   <label for="value">{{vm.evidence.restauration}}</label>
-                  <input type="checkbox" ng-model="show_restauration">
+                  <input type="checkbox" ng-model="flags.restauration">
               </div>
               <div class="col-md-6">
                 <label for="originPlace" style="color: #778899">Origin Place: </label>
                   <label for="value">{{vm.evidence.originPlace}}</label>
-                  <input type="checkbox" ng-model="show_origin_place">
+                  <input type="checkbox" ng-model="flags.origin_place">
               </div>
             </div>
           </div>
@@ -145,12 +145,12 @@
               <div class="col-md-6">
                 <label for="storageLocation" style="color: #778899">Storage Location: </label>
                   <label for="value">{{vm.evidence.storageLocation}}</label>
-                  <input type="checkbox" ng-model="show_storage_location">
+                  <input type="checkbox" ng-model="flags.storageLocation">
               </div>
               <div class="col-md-6">
                 <label for="historicInformation" style="color: #778899">Historic Information: </label>
                   <label for="value">{{vm.evidence.historicInformation}}</label>
-                  <input type="checkbox" ng-model="show_historic_information">
+                  <input type="checkbox" ng-model="flags.historicInformation">
               </div>
             </div>
           </div>
@@ -159,7 +159,7 @@
               <div class="col-md-6">
                 <label for="owner" style="color: #778899">Owner: </label>
                   <label for="value">{{vm.evidence.owner}}</label>
-                  <input type="checkbox" ng-model="show_owner">
+                  <input type="checkbox" ng-model="flags.owner">
               </div>
             </div>
           </div>
@@ -168,13 +168,9 @@
               <div class="col-md-6" >
                   <label style="color: #778899">Scale of Damage: </label>
                   <label for="value">{{vm.evidence.scaleOfDamage}}</label>
-                  <input type="checkbox" ng-model="show_scale_of_damage">
+                  <input type="checkbox" ng-model="flags.scaleOfDamage">
               </div>
-              <div class="col-md-6">
-                <label for="original" style="color: #778899">Original: </label>
-                  <label for="value">{{vm.evidence.original}}</label>
-                  <input type="checkbox" ng-model="show_is_original">
-              </div>
+              
             </div>
           </div>
           <div class="form-group">
@@ -182,7 +178,7 @@
               
             </div>
             </div>
-          <a class="btn btn-success btn-block" href="">Confirm Public</a>
+          <a class="btn btn-success btn-block" href="/show-evidence?id={{vm.evidence.id}}" ng-click="public()">Confirm Public</a>
         </form>
         
       </div>
