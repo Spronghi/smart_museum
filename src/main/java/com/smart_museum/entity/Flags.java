@@ -37,8 +37,6 @@ public class Flags implements Serializable {
 	private boolean period;
 	@Column(name="show_value")	
 	private boolean value;
-	@Column(name="show_other_data")	
-	private boolean data;
 	@Column(name="show_scale_of_damage")	
 	private boolean scaleOfDamage;
 	@Column(name="show_is_original")	
@@ -53,10 +51,12 @@ public class Flags implements Serializable {
 	private boolean description;
 	@Column(name="show_restauration")	
 	private boolean restauration;
-	@Column(name="show_extended_description")	
-	private boolean extendedDescription;
-	@Column(name="show_short_description")	
-	private boolean shortDescription;
+	@Column(name="show_other_data")	
+	private boolean otherData;
+	@Column(name="show_weight")	
+	private boolean weight;
+	@Column(name="show_dimensions")	
+	private boolean dimensions;
 	@Column(name="show_author")
     private boolean author;
 	@OneToOne
@@ -146,15 +146,6 @@ public class Flags implements Serializable {
 	public void setValue(boolean value) {
 		this.value = value;
 	}
-
-	public boolean isData() {
-		return data;
-	}
-
-	public void setData(boolean data) {
-		this.data = data;
-	}
-
 	public boolean isScaleOfDamage() {
 		return scaleOfDamage;
 	}
@@ -211,20 +202,28 @@ public class Flags implements Serializable {
 		this.restauration = restauration;
 	}
 
-	public boolean isExtendedDescription() {
-		return extendedDescription;
+	public boolean isOtherData() {
+		return otherData;
 	}
 
-	public void setExtendedDescription(boolean extendedDescription) {
-		this.extendedDescription = extendedDescription;
+	public void setOtherData(boolean otherData) {
+		this.otherData = otherData;
 	}
 
-	public boolean isShortDescription() {
-		return shortDescription;
+	public boolean isWeight() {
+		return weight;
 	}
 
-	public void setShortDescription(boolean shortDescription) {
-		this.shortDescription = shortDescription;
+	public void setWeight(boolean weight) {
+		this.weight = weight;
+	}
+
+	public boolean isDimensions() {
+		return dimensions;
+	}
+
+	public void setDimensions(boolean dimensions) {
+		this.dimensions = dimensions;
 	}
 
 	public boolean isAuthor() {
@@ -242,5 +241,7 @@ public class Flags implements Serializable {
 	public void setEvidence(Evidence evidence) {
 		this.evidence = evidence;
 	}
+
+
 	
 }

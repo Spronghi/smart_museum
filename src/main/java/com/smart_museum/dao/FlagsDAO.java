@@ -34,24 +34,25 @@ public class FlagsDAO implements IFlagsDAO {
 		Flags fl = getFlagsById(flags.getId());
 		fl.setAuthor(flags.isAuthor());
 		fl.setCulture(flags.isCulture());
-		fl.setData(flags.isData());
 		fl.setDescription(flags.isDescription());
 		fl.setDomain(flags.isDomain());
 		fl.setEvidence(flags.getEvidence());
-		fl.setExtendedDescription(flags.isExtendedDescription());
+		fl.setOtherData(flags.isOtherData());
 		fl.setHistoricInformation(flags.isHistoricInformation());
 		fl.setMaterial(flags.isMaterial());
 		fl.setNumber(flags.isNumber());
 		fl.setOrigin_place(flags.isOrigin_place());
+		fl.setOriginal(flags.isOriginal());
 		fl.setOwner(flags.isOwner());
 		fl.setPeriod(flags.isPeriod());
 		fl.setRestauration(flags.isRestauration());
 		fl.setScaleOfDamage(flags.isScaleOfDamage());
-		fl.setShortDescription(flags.isShortDescription());
+		fl.setWeight(flags.isWeight());
 		fl.setStorageLocation(flags.isStorageLocation());
 		fl.setTechnique(flags.isTechnique());
 		fl.setType(flags.isType());
 		fl.setValue(flags.isValue());
+		fl.setDimensions(flags.isDimensions());
 		entityManager.flush();
 	}
 	@Override
@@ -61,6 +62,6 @@ public class FlagsDAO implements IFlagsDAO {
 	@Override
 	public Flags getFlagsByEvidenceId(int evidenceId) {
 		String hql = "FROM Flags as show_flags WHERE show_flags.evidence.id= ?";
-		return (Flags) entityManager.createQuery(hql).setParameter(1, evidenceId).getResultList();
+		return (Flags) entityManager.createQuery(hql).setParameter(1, evidenceId).getResultList().get(0);
 	}
 }
