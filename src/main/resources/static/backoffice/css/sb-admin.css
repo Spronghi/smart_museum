@@ -8,7 +8,8 @@ html {
   min-height: 100%; }
 
 body {
-  overflow-x: hidden; }
+  overflow-x: hidden;
+background: url(../img/bg.jpg);}
 .bodyBG {
   background: url(../img/bg.jpg);
 }
@@ -22,7 +23,8 @@ body.fixed-nav {
 
 .content-wrapper {
   min-height: calc(100vh - 56px);
-  padding-top: 1rem; }
+  padding-top: 1rem; 
+}
 
 .scroll-to-top {
   position: fixed;
@@ -211,7 +213,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 
 .content-wrapper {
   overflow-x: hidden;
-  background: white; }
+  background: url(../img/bg.jpg); }
   @media (min-width: 992px) {
     .content-wrapper {
       margin-left: 250px; } }
