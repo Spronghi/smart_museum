@@ -5,7 +5,7 @@
    <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="table-evidences.html">
+          <a class="nav-link" href="table-evidences">
             <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">Evidences</span>
           </a>
@@ -18,7 +18,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseMulti">
             <li>
-              <a href="register_evidence.html">Register Evidence</a>
+              <a href="/register-evidence">Register Evidence</a>
             </li>
           </ul>
         </li>
@@ -32,8 +32,8 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+          <a class="nav-link" ng-controller="LogoutCtrl" data-toggle="modal" ng-click='logout()' data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out" ng-controller="LogoutCtrl" data-toggle="modal" ng-click='logout()'></i>Logout</a>
         </li>
       </ul>
 </div>  

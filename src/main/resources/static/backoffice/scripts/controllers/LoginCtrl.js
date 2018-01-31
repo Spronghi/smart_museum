@@ -1,9 +1,17 @@
 app.controller('LoginCtrl', function ($scope, dataService, $http, $window) {
-    $scope.currentOperator = [];
-    $scope.logout = function (){
-        dataService.unset();
-        $window.location.href = "/backoffice/login.html";
+    if(dataService.getCurrentId() == 0){
+        //do nothing
+    } else if(dataService.getCurrentOperator().admin){
+        if($window.location != "/backoffice/admin.html"){
+           $window.location.href = "/backoffice/admin.html";
+        }
+    } else if(!dataService.getCurrentOperator().admin){
+        if($window.location != "/backoffice/index.html"){
+           $window.location.href = "/backoffice/index.html";
+        }
+        
     }
+    $scope.currentOperator = [];
     $scope.login = function () {
         $http.get("/user/login/"+$scope.vm.username)
             .then(function (res) {

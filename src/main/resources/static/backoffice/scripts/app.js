@@ -6,11 +6,11 @@ var app = angular.module('BackofficeApp',['app.services', 'ngRoute'])
                 });
             $routeProvider.when("/", {
                     templateUrl : "backoffice/login.html",
-                    controller : "Login.Ctrl"
+                    controller : "LoginCtrl"
                 })
                 .when("/login", {
                     templateUrl : "backoffice/login.html",
-                    controller : "Login.Ctrl"
+                    controller : "LoginCtrl"
                 })
                 .when("/home", {
                     templateUrl : "backoffice/index.html"
@@ -70,7 +70,8 @@ var app = angular.module('BackofficeApp',['app.services', 'ngRoute'])
                 .when("/public-evidence", {
                     templateUrl : "backoffice/show/public-evidence.html",
                     controller : "PublicEvidenceCtrl"
-                });
+                })
+                .otherwise({redirectTo: '/backoffice/login.html'});
             });
 
 app.directive('numbersOnly', function () {
