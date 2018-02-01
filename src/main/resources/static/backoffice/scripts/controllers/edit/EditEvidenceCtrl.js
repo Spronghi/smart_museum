@@ -35,7 +35,8 @@ app.controller('EditEvidenceCtrl', function (dataService, $location, $scope, $ht
                 storageLocation: $scope.evidence.storageLocation,
                 historicInformation: $scope.evidence.historicInformation,
                 scaleOfDamage: $scope.evidence.scaleOfDamage,
-                original: $scope.evidence.original
+                original: $scope.evidence.original,
+                public: $scope.evidence.public
             };
 
             $http.put('/user/evidence', data, config).then(function (response) {

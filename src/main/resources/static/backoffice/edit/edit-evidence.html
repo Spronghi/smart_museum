@@ -40,7 +40,7 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="number">Number</label>
-                <input class="form-control" id="number" ng-model="evidence.number" type="text" aria-describedby="nameHelp" placeholder="Enter number">
+                <input class="form-control" id="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-model="evidence.number" type="text" aria-describedby="nameHelp" placeholder="Enter number">
               </div>
               <div class="col-md-6">
                 <label for="domain">Domain</label>
@@ -105,7 +105,7 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="weight">Weight</label>
-                <input class="form-control" id="weight" ng-model="evidence.weight" type="text" aria-describedby="nameHelp" placeholder="Enter weight">
+                <input class="form-control" id="weight" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-model="evidence.weight" type="text" aria-describedby="nameHelp" placeholder="Enter weight">
               </div>
               <div class="col-md-6">
                 <label for="value">Value</label>
@@ -121,22 +121,10 @@
                 <input class="form-control" id="otherData" ng-model="evidence.otherData" type="text" aria-describedby="nameHelp" placeholder="Enter other_data">
               </div>
               <div class="col-md-6">
-                  <label>Scale of Damage </label>
-                  <div class="btn-group">
-                  <select ng-model="evidence.scaleOfDamage">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                    <option>9</option>
-                    <option>10</option>
-                  </select>
-                </div>
+                <label for="restauration">Restauration</label>
+                <input class="form-control" id="restauration" ng-model="evidence.restauration" type="text" aria-describedby="nameHelp" placeholder="Enter restauration">
               </div>
+              
             </div>
           </div>
         
@@ -144,9 +132,10 @@
          <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
-                <input id="original" ng-model="evidence.original" type="checkbox">
-                <label for="original"> Original</label>
+                <label for="description">Description</label>
+                <input class="form-control" id="description" ng-model="evidence.description" type="text" aria-describedby="nameHelp" placeholder="Enter description">
               </div>
+              
               <div class="col-md-6">
                 <label for="originPlace">origin place</label>
                 <input class="form-control" id="originPlace" ng-model="evidence.originPlace" type="text" aria-describedby="nameHelp" placeholder="Enter origin_place">
@@ -170,12 +159,33 @@
          <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
-                <label for="description">Description</label>
-                <input class="form-control" id="description" ng-model="evidence.description" type="text" aria-describedby="nameHelp" placeholder="Enter description">
+                <input id="original" ng-model="evidence.original" type="checkbox">
+                <label for="original"> Original</label>
               </div>
               <div class="col-md-6">
-                <label for="restauration">Restauration</label>
-                <input class="form-control" id="restauration" ng-model="evidence.restauration" type="text" aria-describedby="nameHelp" placeholder="Enter restauration">
+                  <label>Scale of Damage </label>
+                  <div class="btn-group">
+                  <select ng-model="evidence.scaleOfDamage">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6">
+                <input id="original" ng-model="evidence.public" type="checkbox">
+                <label for="original"> Public</label>
               </div>
             </div>
           </div>

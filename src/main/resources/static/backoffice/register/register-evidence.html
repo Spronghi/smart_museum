@@ -28,7 +28,7 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="number">Number</label>
-                <input class="form-control" type="text" numbersOnly ng-model="vm.number" aria-describedby="nameHelp" placeholder="Enter number">
+                <input class="form-control" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-model="vm.number" aria-describedby="nameHelp" placeholder="Enter number">
               </div>
               <div class="col-md-6">
                 <label for="domain">Domain</label>
@@ -93,7 +93,7 @@
             <div class="form-row">
               <div class="col-md-6">
                 <label for="weight">Weight</label>
-                <input class="form-control" type="text" numbersOnly id="weight" ng-model="vm.weight" aria-describedby="nameHelp" placeholder="Enter weight">
+                <input class="form-control" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="weight" ng-model="vm.weight" aria-describedby="nameHelp" placeholder="Enter weight">
               </div>
               <div class="col-md-6">
                 <label for="value">Value</label>

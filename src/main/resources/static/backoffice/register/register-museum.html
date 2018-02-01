@@ -44,7 +44,7 @@
                 
               <div class="col-md-6">
                 <label for="postalNo">Postal Number</label>
-                <input class="form-control" id="postalNo" ng-model="vm.postalNo" type="text" aria-describedby="nameHelp" placeholder="Enter postal number">
+                <input class="form-control" onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="postalNo" ng-model="vm.postalNo" type="text" aria-describedby="nameHelp" placeholder="Enter postal number">
               </div>
             </div>
           </div>
