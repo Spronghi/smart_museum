@@ -24,9 +24,10 @@
     <!-- Custom styles for this template -->
     <link href="css/creative.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
-  </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js"></script>
 
-  <body id="page-top">
+  </head>
+  <body ng-controller="HomeCtrl" id="page-top">
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -40,7 +41,7 @@
             <li class="nav-item">
                  <!-- Link or button for dropdown -->
                  <a data-toggle="dropdown" href="#museumL" class="nav-link js-scroll-trigger">Museums</a>
-                <!-- div class="dropdown" ng-controller="MuseumListCtrl">
+                <!-- div class="dropdown" ng-controller="HomeCtrl">
                  <!-- Menu dropdown
                  <ul class="dropdown-menu ml-auto" >
                      <div ng-repeat="museum in museums">
@@ -65,27 +66,27 @@
         <div class="row">
           <div class="col-lg-10 mx-auto">
             <h1 class="text-uppercase">
-              <strong >Smartmuseum</strong>
+              <strong >{{vm.museum.name}}</strong>
             </h1>
             <hr>
           </div>
           <div class="col-lg-8 mx-auto">
-            <p class="text-faded mb-5">SmartMuseum is the new experience in museums. Use the last technology, you just need your smartphone</p>
+            <p class="text-faded mb-5">{{vm.museum.description}}</p>
             <a class="btn btn-primary btn-xl js-scroll-trigger" href="#contact">Find Out More</a>
           </div>
         </div>
       </div>
     </header>
-      
+    </br>  
     <section class="p-0" id="museumL">
-      <div class="container-fluid p-0" ng-controller="MuseumListCtrl">
-        <div class="row no-gutters popup-gallery" >
+      <div class="container-fluid p-0" ng-controller="HomeCtrl">
+          <div class="row no-gutters popup-gallery" >
           <div class="col-lg-4 col-sm-6" ng-repeat="museum in museums">
             <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
               <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
-              <div class="portfolio-box-caption">
+              <div  class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
+                  <div class="project-category text-faded" href="http://localhost:8080/home/index.html?id={{museum.id}}">
                     {{museum.name}}
                   </div>
                   <div class="museum-name" >
@@ -94,6 +95,7 @@
                 </div>
               </div>
             </a>
+            
           </div>
         </div>
       </div>
@@ -105,7 +107,7 @@
           <div class="col-lg-8 mx-auto text-center">
             <h2 class="section-heading">Let's Get In Touch!</h2>
             <hr class="my-4">
-            <p class="mb-5">Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+            <p class="mb-5">Come and visit us!</p>
           </div>
         </div>
         <div class="row">
@@ -116,7 +118,7 @@
           <div class="col-lg-4 mr-auto text-center">
             <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
             <p>
-              <a href="mailto:your-email@your-domain.com">fake@smartmuseum.com</a>
+              <a href="mailto:your-email@your-domain.com">{{vm.museum.email}}</a>
             </p>
           </div>
         </div>
@@ -134,19 +136,39 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/creative.min.js"></script>
-<!--script>
-function addressController($scope,$http) {
-  $http.get("museums.json")
-  .success(function(response)
-    {
-	  $scope.addlist = response;
-	}
-  );
-}
-</script-->
-      <script src="scripts/app.js"></script>
-      <script src="scripts/controllers/MuseumListCtrl.js"></script>
-      
+    
+    <script>
+    var app = angular.module('HomeApp',['ngRoute'])
+        .config(function($routeProvider, $locationProvider) {
+            $locationProvider.html5Mode({
+                    enabled: true,
+                    requireBase: false
+                });
+            $routeProvider.when("/home", {
+                    templateUrl : "home/index.html",
+                    controller : "LoginCtrl"
+                });
+            });
+    app.controller('HomeCtrl', function ($window,$location, $scope, $http) {
+        $scope.vm = [];
+        $scope.vm.museum = [];
+        $scope.id = $location.search().id;
+        if(typeof $scope.id == "undefined"){
+            $scope.vm.museum.name = "SmartMuseum";
+            $scope.vm.museum.description = "SmartMuseum is the new experience in museums. Use the last technology, you just need your smartphone";
+            $scope.vm.museum.email = "fake@smartmuseum.com";
+                
+        } else {
+            $http.get("/user/museum/"+$scope.id).then(function (res) {
+                $scope.vm.museum = res.data;
+            });
+        }
+        $http.get("/user/museums").then(function (res) {
+            $scope.museums = res.data;    
+        });
+    });
+
+    </script>
   </body>
 
 </html>
