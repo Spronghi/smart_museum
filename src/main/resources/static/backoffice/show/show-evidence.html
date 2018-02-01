@@ -158,9 +158,9 @@
           </div>
           <div class="form-group">
             <div class="form-row">
-              
+              <img src="{{vm.qrcode}}" alt="QR Code" height="200" width="200"> 
             </div>
-            </div>
+          </div>
           <a class="btn btn-primary btn-block" href="/edit-evidence?id={{vm.evidence.id}}">Edit</a>
           <a class="btn btn-success btn-block" href="/public-evidence?id={{vm.evidence.id}}">Public</a>
           <a class="btn btn-danger btn-block" href="/table-evidences" ng-click="deleteRow()" >Delete</a>
@@ -169,7 +169,11 @@
       </div>
     </div>
   </div>
-
+  <!-- QR Code-->
+  <script type="text/javascript" src="js/qrcode/qrcode.js"></script>
+  <script type="text/javascript" src="js/qrcode/qrcode_UTF8.js"></script>
+  <script type="text/javascript" src="js/qrcode/angular-qrcode.js"></script>
+  <!-- Controllers-->
   <script src="scripts/app.js"></script>
   <script src="scripts/app.services.js"></script>
   <script src="scripts/controllers/show/ShowEvidenceCtrl.js"></script>

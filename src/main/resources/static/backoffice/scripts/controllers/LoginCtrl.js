@@ -1,5 +1,5 @@
 app.controller('LoginCtrl', function ($scope, dataService, $http, $window) {
-    if(dataService.getCurrentId() == 0){
+    if(dataService.getCurrentId() == 0 || typeof dataService.getCurrentOperator() == "undefined"){
         //do nothing
     } else if(dataService.getCurrentOperator().admin){
         if($window.location != "/backoffice/admin.html"){
