@@ -40,15 +40,15 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                  <!-- Link or button for dropdown -->
-                 <a data-toggle="dropdown" href="#museumL" class="nav-link js-scroll-trigger">Museums</a>
-                <!-- div class="dropdown" ng-controller="HomeCtrl">
-                 <!-- Menu dropdown
+                <a data-toggle="dropdown" href="#" class="nav-link js-scroll-trigger">Museums</a>
+                <div class="dropdown" ng-controller="HomeCtrl">
+                 <!-- Menu dropdown -->
                  <ul class="dropdown-menu ml-auto" >
                      <div ng-repeat="museum in museums">
-                        <li>{{museum.name}}</li>
+                         <a href="http://localhost:8080/home/index.html?id={{museum.id}}">{{museum.name}}</a>
                      </div>
                  </ul>
-                </div-->
+                </div>
                 </li>
               <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">contact</a>
@@ -80,13 +80,13 @@
     </br>  
     <section class="p-0" id="museumL">
       <div class="container-fluid p-0" ng-controller="HomeCtrl">
-          <div class="row no-gutters popup-gallery" >
+          <div class="row no-gutters popup-gallery">
           <div class="col-lg-4 col-sm-6" ng-repeat="museum in museums">
-            <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
+            <a class="portfolio-box" href="img/portfolio/fullsize/{{museum.id}}.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/{{museum.id}}.jpg" alt="">
               <div  class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded" href="http://localhost:8080/home/index.html?id={{museum.id}}">
+                  <div class="project-category text-faded">
                     {{museum.name}}
                   </div>
                   <div class="museum-name" >
