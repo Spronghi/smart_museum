@@ -40,28 +40,20 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                  <!-- Link or button for dropdown -->
-                <a data-toggle="dropdown" href="#" class="nav-link js-scroll-trigger">Museums</a>
-                <div class="dropdown" ng-controller="HomeCtrl">
-                 <!-- Menu dropdown -->
-                 <ul class="dropdown-menu ml-auto" >
-                     <div ng-repeat="museum in museums">
-                         <a href="http://localhost:8080/home/index.html?id={{museum.id}}">{{museum.name}}</a>
-                     </div>
-                 </ul>
-                </div>
-                </li>
+                <a class="nav-link js-scroll-trigger" data-toggle="dropdown" href="#">Museums</a>
+            </li>
               <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">contact</a>
             </li>
               <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="../backoffice/login.html">Login</a>
+              <a class="nav-link js-scroll-trigger" ng-click="changePage('/backoffice/login.html')" href="">Login</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <header class="masthead text-center text-white d-flex">
+    <header class="masthead text-center text-white d-flex" style="background-image:url({{vm.backgroundImage}})">
       <div class="container my-auto">
         <div class="row">
           <div class="col-lg-10 mx-auto">
@@ -77,13 +69,14 @@
         </div>
       </div>
     </header>
-    </br>  
+    </br>
+    
     <section class="p-0" id="museumL">
       <div class="container-fluid p-0" ng-controller="HomeCtrl">
           <div class="row no-gutters popup-gallery">
           <div class="col-lg-4 col-sm-6" ng-repeat="museum in museums">
-            <a class="portfolio-box" href="img/portfolio/fullsize/{{museum.id}}.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/{{museum.id}}.jpg" alt="">
+            <a class="portfolio-box" href="img/portfolio/fullsize/{{museum.id}}.jpg" >
+              <img class="img-fluid" src="img/portfolio/thumbnails/{{museum.id}}.jpg">
               <div  class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -107,7 +100,7 @@
           <div class="col-lg-8 mx-auto text-center">
             <h2 class="section-heading">Let's Get In Touch!</h2>
             <hr class="my-4">
-            <p class="mb-5">Come and visit us!</p>
+            <p class="mb-5">{{vm.museum.address}}</p>
           </div>
         </div>
         <div class="row">
@@ -149,23 +142,32 @@
                     controller : "LoginCtrl"
                 });
             });
-    app.controller('HomeCtrl', function ($window,$location, $scope, $http) {
+    app.controller('HomeCtrl', function ($timeout,$window,$location, $scope, $http) {
         $scope.vm = [];
         $scope.vm.museum = [];
         $scope.id = $location.search().id;
+        
         if(typeof $scope.id == "undefined"){
+            $scope.vm.backgroundImage = "img/header.jpg";
             $scope.vm.museum.name = "SmartMuseum";
             $scope.vm.museum.description = "SmartMuseum is the new experience in museums. Use the last technology, you just need your smartphone";
             $scope.vm.museum.email = "fake@smartmuseum.com";
-                
+            $scope.vm.museum.address = "Come and visit us!";
         } else {
             $http.get("/user/museum/"+$scope.id).then(function (res) {
                 $scope.vm.museum = res.data;
+                $scope.vm.backgroundImage = "img/portfolio/fullsize/"+$scope.vm.museum.id+".jpg";
             });
         }
         $http.get("/user/museums").then(function (res) {
             $scope.museums = res.data;    
         });
+        $scope.changePage = function(data){
+            $window.location.href = data;
+        }
+        $scope.reloadPage = function(){
+            $timeout(function() { $window.location.reload();}, 250);
+        }
     });
 
     </script>
