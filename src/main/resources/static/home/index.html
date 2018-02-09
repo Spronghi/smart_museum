@@ -40,20 +40,29 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                  <!-- Link or button for dropdown -->
-                <a class="nav-link js-scroll-trigger" data-toggle="dropdown" href="#">Museums</a>
-            </li>
+                <a data-toggle="dropdown" href="#" class="nav-link js-scroll-trigger">Museums</a>
+                <div class="dropdown" ng-controller="HomeCtrl">
+                 <!-- Menu dropdown -->
+                 <ul class="dropdown-menu ml-auto" >
+                     <div ng-repeat="museum in museums">
+                         <!--a href="<http://localhost:8080/home/index.html?id={{museum.id}}" >{{museum.name}}</a-->
+                         <a href="/home/index.html?id={{museum.id}}" ng-click="reloadPage()">{{museum.name}}</a>
+                     </div>
+                 </ul>
+                </div>
+                </li>
               <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">contact</a>
             </li>
               <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" ng-click="changePage('/backoffice/login.html')" href="">Login</a>
+              <a class="nav-link js-scroll-trigger" href="" ng-click="changePage('/backoffice/login.html')">Login</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <header class="masthead text-center text-white d-flex" style="background-image:url({{vm.backgroundImage}})">
+ <header class="masthead text-center text-white d-flex" style="background-image:url({{vm.backgroundImage}})">
       <div class="container my-auto">
         <div class="row">
           <div class="col-lg-10 mx-auto">
@@ -64,19 +73,22 @@
           </div>
           <div class="col-lg-8 mx-auto">
             <p class="text-faded mb-5">{{vm.museum.description}}</p>
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#contact">Find Out More</a>
+            <!--a class="btn btn-primary btn-xl js-scroll-trigger" href="#contact">Find Out More</a-->
           </div>
         </div>
       </div>
     </header>
+    </br>  
+    <div class="text-center" >
+        <h2 class="text-uppercase">Our Museums:</h2>
+    </div>
     </br>
-    
     <section class="p-0" id="museumL">
-      <div class="container-fluid p-0" ng-controller="HomeCtrl">
+      <div class="container-fluid p-0">
           <div class="row no-gutters popup-gallery">
           <div class="col-lg-4 col-sm-6" ng-repeat="museum in museums">
-            <a class="portfolio-box" href="img/portfolio/fullsize/{{museum.id}}.jpg" >
-              <img class="img-fluid" src="img/portfolio/thumbnails/{{museum.id}}.jpg">
+            <a class="portfolio-box" href="img/portfolio/fullsize/{{museum.id}}.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/{{museum.id}}.jpg" alt="">
               <div  class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -98,15 +110,17 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Let's Get In Touch!</h2>
+            <h2 class="section-heading">Information</h2>
             <hr class="my-4">
-            <p class="mb-5">{{vm.museum.address}}</p>
+            <p class="mb-5">Come and visit us!</p>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-4 ml-auto text-center">
             <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
-            <p>555-123-456</p>
+              <p>{{vm.museum.location}}</p>
+              <p>{{vm.museum.address}}</p>
+              <p>{{vm.museum.postalNo}}</p>
           </div>
           <div class="col-lg-4 mr-auto text-center">
             <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
@@ -151,8 +165,8 @@
             $scope.vm.backgroundImage = "img/header.jpg";
             $scope.vm.museum.name = "SmartMuseum";
             $scope.vm.museum.description = "SmartMuseum is the new experience in museums. Use the last technology, you just need your smartphone";
-            $scope.vm.museum.email = "fake@smartmuseum.com";
-            $scope.vm.museum.address = "Come and visit us!";
+            $scope.vm.museum.email = " ";
+            $scope.vm.museum.address = " ";
         } else {
             $http.get("/user/museum/"+$scope.id).then(function (res) {
                 $scope.vm.museum = res.data;
